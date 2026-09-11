@@ -1,23 +1,45 @@
-# Byte-compiled / cache files
-__pycache__/
-*.py[cod]
-*$py.class
-*.cache
-
-# Node / Frontend build outputs & dependencies
-node_modules/
-dist/
-frontend/dist/
-
-# Environment configs (never commit secrets or local configs)
+# ==============================================================================
+# SECRETS, CREDENTIALS & ENVIRONMENT FILES (NEVER COMMIT)
+# ==============================================================================
 .env
-.env.local
-.env.*.local
-.venv/
-env/
-venv/
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+id_rsa*
+*.id_rsa*
+*.pub
+*token*
+*secret*
+*credential*
+*.tskey*
 
-# Large training datasets, weights & runs
+# ==============================================================================
+# DATABASES & PERSISTENT RUNTIME STORAGE
+# ==============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+data/
+backend/data/
+uploads/
+backend/uploads/
+annotated/
+backend/annotated/
+therattayude_kaal.db
+centipede.db
+database.db
+
+# ==============================================================================
+# DATASETS, TRAINING RUNS & HEAVY MODEL WEIGHTS
+# ==============================================================================
 dataset/
 yolo_dataset/
 final_dataset/
@@ -25,48 +47,93 @@ labelled legs/
 labelled\ legs/
 runs/
 weights/
-
-# Ignore base models, but PRESERVE the trained custom weights for deployment
+# Preserve custom deployment model, ignore base / raw / temporary weights
 *.pt
+*.pth
+*.onnx
+*.engine
+*.bin
 !backend/best.pt
 
-# Databases and runtime data
-*.db
-*.sqlite
-*.sqlite3
-data/
-backend/data/
-therattayude_kaal.db
-backend/therattayude_kaal.db
-centipede.db
-backend/centipede.db
-database.db
-backend/database.db
+# ==============================================================================
+# PYTHON COMPILED & CACHE ARTIFACTS
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.cache
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
 
-# Dynamic upload directories and generated artifacts
-uploads/
-backend/uploads/
-annotated/
-backend/annotated/
+# ==============================================================================
+# NODE / JAVASCRIPT / FRONTEND BUILD ARTIFACTS
+# ==============================================================================
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+frontend/dist-ssr/
+.vercel/
+frontend/.vercel/
+.turbo/
+.cache/
 
-# Temporary test / debug images and videos
+# ==============================================================================
+# LOGS & DIAGNOSTICS
+# ==============================================================================
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==============================================================================
+# TEMPORARY TEST IMAGES & VIDEOS
+# ==============================================================================
 test_*.png
 test_*.jpg
 test_*.jpeg
 backend/test_*.png
 backend/test_*.jpg
+backend/test_*.jpeg
 *.mp4
 *.avi
 *.webm
+scratch/
+tmp/
+temp/
 augment_*.py
 
-# Internal workspace / agent skills / IDE files
-SKILLS/
-.agents/
+# ==============================================================================
+# IDE, SYSTEM & WORKSPACE FILES
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
 .idea/
 .vscode/
+*.swp
+*.swo
+*~
+SKILLS/
+.agents/
 COMMITS_LOG.md
-
-# OS files
-.DS_Store
-Thumbs.db
+docker-compose.override.yml
