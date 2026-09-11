@@ -3,7 +3,7 @@
 #### **Department of Absolutely Unnecessary Research — Kerala Division**
 
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![YOLOv8](https://img.shields.io/badge/YOLOv8-Custom--Trained-00FFFF?logo=ultralytics)](https://github.com/ultralytics/ultralytics)
+[![YOLOv8s](https://img.shields.io/badge/YOLOv8s-0.311%20mAP50-00FFFF?logo=ultralytics)](https://github.com/ultralytics/ultralytics)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-CSS%20v4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
@@ -25,8 +25,23 @@ Neither did anyone else. But we built it anyway.
 ഇതുവരെ ആരും അങ്ങനെ ചിന്തിച്ചിട്ടില്ല. എങ്കിലും കേരള ശാസ്ത്ര ഗവേഷണ കൗൺസിലിന്റെ പേരിൽ ഞങ്ങൾ ഈ വിപ്ലവകരമായ വെബ്സൈറ്റ് ഉണ്ടാക്കി!
 
 നിങ്ങൾ അപ്‌ലോഡ് ചെയ്യുന്ന തേരട്ടയുടെ ഫോട്ടോയിൽ നിന്ന് YOLOv8 മോഡൽ ഓരോ കാലുകളെയും കണ്ടെത്തി കൃത്യമായി എണ്ണുന്നു. കൂടാതെ, ഡോക്ടർ കാലുവെട്ടിച്ചും പ്രൊഫസർ മന്തി മസാലയും ഒപ്പിട്ട ഔദ്യോഗിക സർട്ടിഫിക്കറ്റും ഡൗൺലോഡ് ചെയ്യാം!
-
+ 
+ ---
+ 
+## 🧠 Model Benchmarks & Comparison
+ 
+| Metric | Baseline (YOLOv8n) | Upgraded (YOLOv8s) | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Architecture** | YOLOv8 Nano (`3.0M` params) | YOLOv8 Small (`11.1M` params) | +270% capacity |
+| **mAP50** | `0.145` (14.5%) | **`0.311` (31.1%)** | **+114.5% (Over 2x)** |
+| **mAP50-95** | `0.037` (3.7%) | **`0.114` (11.4%)** | **+208.1% (Over 3x)** |
+| **Precision (P)** | `0.254` | **`0.431`** | **+69.7%** |
+| **Recall (R)** | `0.225` | **`0.367`** | **+63.1%** |
+| **Inference (RTX 4050)** | `5.7ms` | `10.2ms` | Real-time |
+| **Inference (CPU)** | `~25ms` | `~55ms` | Instantaneous |
+ 
 ---
+
 
 ## 🛠️ Architecture
 
