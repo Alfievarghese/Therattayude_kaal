@@ -1,0 +1,31 @@
+{
+  "framework": "vite",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    {
+      "source": "/detect",
+      "destination": "https://fox.tailcc00e1.ts.net/detect"
+    },
+    {
+      "source": "/leaderboard",
+      "destination": "https://fox.tailcc00e1.ts.net/leaderboard"
+    },
+    {
+      "source": "/recount/:path*",
+      "destination": "https://fox.tailcc00e1.ts.net/recount/:path*"
+    },
+    {
+      "source": "/certificate/:path*",
+      "destination": "https://fox.tailcc00e1.ts.net/certificate/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://fox.tailcc00e1.ts.net/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

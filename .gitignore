@@ -20,6 +20,7 @@ venv/
 # Large training datasets, weights & runs
 dataset/
 yolo_dataset/
+final_dataset/
 labelled legs/
 labelled\ legs/
 runs/
