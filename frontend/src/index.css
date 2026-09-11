@@ -69,7 +69,7 @@ body {
 }
 
 .shadow-brutal-xl {
-  box-shadow: 10px 10px 0px #0A0A0A;
+  box-shadow: 12px 12px 0px #0A0A0A;
 }
 
 .shadow-brutal-yellow {
@@ -142,8 +142,8 @@ body {
 /* Card Containers */
 .brutal-card {
   background-color: #FFFFFF;
-  border: 3px solid #0A0A0A;
-  box-shadow: 6px 6px 0px #0A0A0A;
+  border: 4px solid #0A0A0A;
+  box-shadow: 8px 8px 0px #0A0A0A;
   position: relative;
 }
 
@@ -181,7 +181,7 @@ body {
 .animate-marquee {
   display: inline-flex;
   white-space: nowrap;
-  animation: marquee 24s linear infinite;
+  animation: marquee 56s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -190,17 +190,13 @@ body {
 
 /* Crawling Centipede Animation */
 @keyframes crawlTrack {
-  0% { transform: translateX(-240px); }
-  100% { transform: translateX(calc(100vw + 240px)); }
+  0% { transform: translateX(-300px); }
+  100% { transform: translateX(calc(100vw + 300px)); }
 }
 
 .animate-crawl {
-  animation: crawlTrack 18s linear infinite;
+  animation: crawlTrack 22s linear infinite;
   will-change: transform;
-}
-
-.animate-crawl:hover {
-  animation-duration: 6.5s;
 }
 
 /* Endless top-corner mini running centipede loop */

@@ -66,7 +66,7 @@ export default function TopCornerCentipede() {
             })}
 
             {/* Head */}
-            <ellipse cx="68" cy="7.5" rx="3.5" ry="3" fill="#FF2E93" stroke="#0A0A0A" strokeWidth="0.8" />
+            <ellipse cx="68" cy="7.5" rx="3.5" ry="3" fill="#C2410C" stroke="#0A0A0A" strokeWidth="0.8" />
             <circle cx="69" cy="6.2" r="0.8" fill="#FFFFFF" />
 
             {/* Antennae */}

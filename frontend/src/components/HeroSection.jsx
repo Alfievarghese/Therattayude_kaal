@@ -1,45 +1,49 @@
-import { AlertTriangle, Award, Microscope, ShieldAlert, Sparkles } from 'lucide-react';
+import { AlertTriangle, Award, Microscope } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full border-b-4 border-[#0A0A0A] bg-[#FFFFFF] overflow-hidden">
-      {/* Top Warning Hazard Stripe Marquee */}
-      <div className="w-full bg-[#FFE600] border-b-3 border-[#0A0A0A] py-2 overflow-hidden flex items-center select-none">
-        <div className="animate-marquee font-mono font-bold text-xs md:text-sm uppercase tracking-widest text-[#0A0A0A] flex items-center gap-8">
-          <span className="inline-flex items-center gap-1.5">
-            <AlertTriangle className="w-4 h-4 text-[#0A0A0A] shrink-0" strokeWidth={3} />
-            DEPARTMENT OF ABSOLUTELY UNNECESSARY RESEARCH
+    <section className="relative w-full border-b-4 border-[#0A0A0A] bg-[#F5F3EB] overflow-hidden">
+      {/* Top Warning Hazard Stripe Marquee (Enlarged & Slowed for Crystal-Clear Readability) */}
+      <div className="w-full bg-[#FFE600] border-b-4 border-[#0A0A0A] py-3.5 overflow-hidden flex items-center select-none shadow-[inset_0_2px_0_rgba(255,255,255,0.4)]">
+        <div className="animate-marquee font-mono font-black text-sm sm:text-base md:text-lg uppercase tracking-wider text-[#0A0A0A] flex items-center gap-10">
+          <span className="inline-flex items-center gap-2 bg-[#0A0A0A] text-[#FFE600] px-3 py-1 font-archivo text-xs md:text-sm shadow-sm">
+            <AlertTriangle className="w-4 h-4 text-[#FFE600] shrink-0" strokeWidth={3} />
+            CLASSIFIED TELEMETRY
           </span>
-          <span>///</span>
+          <span>DEPARTMENT OF ABSOLUTELY UNNECESSARY RESEARCH</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>PROJECT: THERATTAYUDE KAAL (തേരട്ടയുടെ കാൽ)</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>STATUS: HYPER-OPERATIONAL</span>
-          <span>///</span>
-          <span>OBJECTIVE: COUNT CENTIPEDE LEGS</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
+          <span>CALIBRATED FOR CENTIPEDES (പഴുതാര) ONLY</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>SCIENTIFIC SIGNIFICANCE: ABSOLUTE ZERO</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>WARNING: HUMAN TIME WILL NOT BE REFUNDED</span>
-          <span>///</span>
-          <span className="inline-flex items-center gap-1.5">
-            <AlertTriangle className="w-4 h-4 text-[#0A0A0A] shrink-0" strokeWidth={3} />
-            DEPARTMENT OF ABSOLUTELY UNNECESSARY RESEARCH
+          <span className="text-[#FF3333] font-black">///</span>
+          <span className="inline-flex items-center gap-2 bg-[#0A0A0A] text-[#FFE600] px-3 py-1 font-archivo text-xs md:text-sm shadow-sm">
+            <AlertTriangle className="w-4 h-4 text-[#FFE600] shrink-0" strokeWidth={3} />
+            CLASSIFIED TELEMETRY
           </span>
-          <span>///</span>
+          <span>DEPARTMENT OF ABSOLUTELY UNNECESSARY RESEARCH</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>PROJECT: THERATTAYUDE KAAL (തേരട്ടയുടെ കാൽ)</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>STATUS: HYPER-OPERATIONAL</span>
-          <span>///</span>
-          <span>OBJECTIVE: COUNT CENTIPEDE LEGS</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
+          <span>CALIBRATED FOR CENTIPEDES (പഴുതാര) ONLY</span>
+          <span className="text-[#FF3333] font-black">///</span>
           <span>SCIENTIFIC SIGNIFICANCE: ABSOLUTE ZERO</span>
-          <span>///</span>
+          <span className="text-[#FF3333] font-black">///</span>
+          <span>WARNING: HUMAN TIME WILL NOT BE REFUNDED</span>
+          <span className="text-[#FF3333] font-black">///</span>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        {/* Main Brutalist Hero Card */}
-        <div className="brutal-card p-6 md:p-12 relative bg-[#FFFFFF] shadow-brutal-xl">
+        {/* Main Brutalist Hero Card with Massive Depth & 4px Border */}
+        <div className="brutal-card border-4 border-[#0A0A0A] p-6 md:p-12 relative bg-[#FFFFFF] shadow-[8px_8px_0px_#0A0A0A] md:shadow-[14px_14px_0px_#0A0A0A]">
           {/* Decorative Corner Crosshairs */}
           <div className="crosshair-corner crosshair-tl" />
           <div className="crosshair-corner crosshair-tr" />
@@ -82,7 +86,7 @@ export default function HeroSection() {
 
               {/* Tagline */}
               <p className="font-mono text-sm sm:text-base text-gray-800 font-bold max-w-xl leading-relaxed">
-                &ldquo;Counting the legs of a centipede&rdquo; — A Malayalam adage for the single most unnecessary task conceivable to human imagination. Upgraded to custom YOLOv8s deep vision (46.2% mAP50 precision).
+                &ldquo;Counting the legs of a centipede&rdquo; — A Malayalam adage for the single most unnecessary task conceivable to human imagination. Calibrated strictly on predatory centipedes (പഴുതാര) via custom YOLOv8s deep vision (46.2% mAP50 precision).
               </p>
             </div>
 
@@ -106,96 +110,196 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Utilitarian Data Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t-3 border-[#0A0A0A] font-mono text-xs">
-            <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
-              <div className="text-gray-500 font-bold uppercase text-[10px]">DETECTION ENGINE</div>
-              <div className="font-archivo text-sm text-[#0A0A0A] mt-0.5 font-black">YOLOv8s (SMALL)</div>
+          {/* Classified Government Telemetry Terminal Readouts (4 Stat Boxes) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-8 pt-6 border-t-3 border-[#0A0A0A] font-mono">
+            {/* Stat Box 1: Detection Engine */}
+            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
+              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
+                <span>[ SYS_PARAM // 01 ]</span>
+                <span className="inline-flex items-center gap-1 text-[#00E676] text-[9px] font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-pulse" />
+                  ONLINE
+                </span>
+              </div>
+              <div className="font-archivo text-base sm:text-lg text-white font-black tracking-tight">
+                YOLOv8s
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
+                <span>MODEL: DEEP VISION</span>
+                <span className="text-[#00E676] font-bold">46.2% mAP</span>
+              </div>
             </div>
-            <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
-              <div className="text-gray-500 font-bold uppercase text-[10px]">TARGET CLASS</div>
-              <div className="font-archivo text-sm text-[#0A0A0A] mt-0.5">centipede_leg</div>
+
+            {/* Stat Box 2: Target Class */}
+            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
+              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
+                <span>[ SYS_PARAM // 02 ]</span>
+                <span className="text-gray-400 text-[9px] font-bold">TAXA</span>
+              </div>
+              <div className="font-archivo text-base sm:text-lg text-[#FFE600] font-black tracking-tight">
+                centipede_leg
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
+                <span>APPENDAGE TYPE</span>
+                <span className="text-white font-bold">CHILOPODA</span>
+              </div>
             </div>
-            <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
-              <div className="text-gray-500 font-bold uppercase text-[10px]">UTILITY LEVEL</div>
-              <div className="font-archivo text-sm text-[#FF3333] mt-0.5">0.00% (STRICT)</div>
+
+            {/* Stat Box 3: Utility Level */}
+            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FF3333] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
+              <div className="flex items-center justify-between text-[#FF3333] font-black uppercase text-[10px] tracking-wider mb-1">
+                <span>[ SYS_PARAM // 03 ]</span>
+                <span className="text-[#FF3333] text-[9px] font-bold">CRITICAL</span>
+              </div>
+              <div className="font-archivo text-base sm:text-lg text-[#FF3333] font-black tracking-tight">
+                0.00% (STRICT)
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
+                <span>SOCIOECONOMIC USE</span>
+                <span className="text-[#FF3333] font-bold">NULL_VALUE</span>
+              </div>
             </div>
-            <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
-              <div className="text-gray-500 font-bold uppercase text-[10px]">DIVISION</div>
-              <div className="font-archivo text-sm text-[#0A0A0A] mt-0.5">KERALA HQ</div>
+
+            {/* Stat Box 4: Division */}
+            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
+              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
+                <span>[ SYS_PARAM // 04 ]</span>
+                <span className="text-gray-400 text-[9px] font-bold">JURISDICTION</span>
+              </div>
+              <div className="font-archivo text-base sm:text-lg text-white font-black tracking-tight">
+                KERALA HQ
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
+                <span>STATION CODE</span>
+                <span className="text-[#FFE600] font-bold">09.93°N // 76.26°E</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Industrial Metric Ruler & Crawling Centipede Track */}
+      {/* Industrial Metric Ruler & Realistic Scolopendra Centipede Track */}
       <div className="w-full bg-[#FAF8F5] border-t-3 border-[#0A0A0A] pt-4 pb-2 relative overflow-hidden select-none">
-        {/* Animated Centipede on track */}
-        <div className="w-full h-11 relative pointer-events-auto mb-1 cursor-grab" title="Live Centipede Specimen — Hover to accelerate crawl telemetry">
-          <div className="animate-crawl absolute top-0 flex items-center">
-            <svg width="250" height="42" viewBox="0 0 250 42" className="centipede-body-wave">
+        {/* Animated Centipede on track (Hover bug completely eliminated) */}
+        <div className="w-full h-12 relative mb-1" title="Kerala Specimen (പഴുതാര) // Calibrated Metric Telemetry Track">
+          <div className="animate-crawl absolute top-0 flex items-center pointer-events-none">
+            <svg width="280" height="48" viewBox="0 0 280 48" className="centipede-body-wave overflow-visible">
               <defs>
-                <linearGradient id="chitinGradA" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FFE600" />
-                  <stop offset="100%" stopColor="#F59E0B" />
-                </linearGradient>
-                <linearGradient id="chitinGradB" x1="0%" y1="0%" x2="100%" y2="100%">
+                {/* Authentic Arthropod Amber-to-Mahogany Chitin Gradients */}
+                <linearGradient id="tergiteGradA" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#F59E0B" />
-                  <stop offset="100%" stopColor="#D97706" />
+                  <stop offset="60%" stopColor="#D97706" />
+                  <stop offset="100%" stopColor="#B45309" />
+                </linearGradient>
+                <linearGradient id="tergiteGradB" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#D97706" />
+                  <stop offset="60%" stopColor="#B45309" />
+                  <stop offset="100%" stopColor="#78350F" />
+                </linearGradient>
+                <linearGradient id="headCapsuleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#C2410C" />
+                  <stop offset="70%" stopColor="#9A3412" />
+                  <stop offset="100%" stopColor="#431407" />
                 </linearGradient>
               </defs>
 
-              {/* Caudal Cerci (Elongated Rear Sensory Anal Legs) */}
-              <path d="M 16,17 Q 8,13 0,7" stroke="#0A0A0A" strokeWidth="2.4" strokeLinecap="round" fill="none" />
-              <path d="M 16,25 Q 8,29 0,35" stroke="#0A0A0A" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+              {/* Caudal Cerci / Tail Feelers (Elongated Rear Sensory Legs) */}
+              <path
+                d="M 22,20 Q 11,14 0,7"
+                stroke="#B45309"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <circle cx="0" cy="7" r="1.5" fill="#0A0A0A" />
 
-              {/* 16 Overlapping Articulated Chitinous Tergites with Jointed Leg Pairs */}
-              {Array.from({ length: 16 }).map((_, i) => {
-                const segX = 18 + i * 11.5;
-                const legX = segX + 5.5;
-                const delay = (15 - i) * 0.034;
+              <path
+                d="M 22,28 Q 11,34 0,41"
+                stroke="#B45309"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <circle cx="0" cy="41" r="1.5" fill="#0A0A0A" />
+
+              {/* 18 Articulated Overlapping Chitinous Tergites with Jointed Walking Legs */}
+              {Array.from({ length: 18 }).map((_, i) => {
+                const segX = 22 + i * 11.2;
+                const legX = segX + 5.6;
+                const delay = (17 - i) * 0.038;
                 const isEven = i % 2 === 0;
 
                 return (
                   <g key={i}>
-                    {/* Top Jointed Leg: Coxa -> Femur -> Tarsus & Claw */}
-                    <g style={{ transformOrigin: `${legX}px 13px`, animation: 'legPaddleTop 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+                    {/* Top Jointed Walking Leg: Coxa -> Femur -> Tarsus & Sharp Claw */}
+                    <g
+                      style={{
+                        transformOrigin: `${legX}px 15px`,
+                        animation: 'legPaddleTop 0.28s ease-in-out infinite',
+                        animationDelay: `${delay}s`,
+                      }}
+                    >
+                      {/* Jointed Leg Limbs */}
                       <polyline
-                        points={`${legX},13 ${legX - 2},7 ${legX - 6},3 ${legX - 11},0`}
-                        stroke="#0A0A0A"
-                        strokeWidth="2.2"
+                        points={`${legX},15 ${legX - 3},8 ${legX - 8},3 ${legX - 13},0`}
+                        stroke="#B45309"
+                        strokeWidth="2.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         fill="none"
                       />
+                      {/* Terminal Claw Tip */}
+                      <circle cx={legX - 13} cy={0} r="1.2" fill="#0A0A0A" />
                     </g>
 
-                    {/* Bottom Jointed Leg: Coxa -> Femur -> Tarsus & Claw */}
-                    <g style={{ transformOrigin: `${legX}px 29px`, animation: 'legPaddleBottom 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+                    {/* Bottom Jointed Walking Leg: Coxa -> Femur -> Tarsus & Sharp Claw */}
+                    <g
+                      style={{
+                        transformOrigin: `${legX}px 33px`,
+                        animation: 'legPaddleBottom 0.28s ease-in-out infinite',
+                        animationDelay: `${delay}s`,
+                      }}
+                    >
+                      {/* Jointed Leg Limbs */}
                       <polyline
-                        points={`${legX},29 ${legX - 2},35 ${legX - 6},39 ${legX - 11},42`}
-                        stroke="#0A0A0A"
-                        strokeWidth="2.2"
+                        points={`${legX},33 ${legX - 3},40 ${legX - 8},45 ${legX - 13},48`}
+                        stroke="#B45309"
+                        strokeWidth="2.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         fill="none"
                       />
+                      {/* Terminal Claw Tip */}
+                      <circle cx={legX - 13} cy={48} r="1.2" fill="#0A0A0A" />
                     </g>
 
-                    {/* Overlapping Rounded Tergite Chitin Plate */}
-                    <ellipse
-                      cx={segX + 5.5}
-                      cy="21"
-                      rx="7.5"
-                      ry="8.5"
-                      fill={isEven ? 'url(#chitinGradA)' : 'url(#chitinGradB)'}
+                    {/* Sculpted Overlapping Tergite Chitin Plate */}
+                    <rect
+                      x={segX}
+                      y="15"
+                      width="12"
+                      height="18"
+                      rx="3.5"
+                      fill={isEven ? 'url(#tergiteGradA)' : 'url(#tergiteGradB)'}
                       stroke="#0A0A0A"
-                      strokeWidth="2"
+                      strokeWidth="1.8"
                     />
 
-                    {/* Tergite Posterior Border Ridge */}
+                    {/* Medial Dorsal Spine Highlight (3D Specular Sheen) */}
+                    <line
+                      x1={segX + 2}
+                      y1="24"
+                      x2={segX + 10}
+                      y2="24"
+                      stroke="#FEF08A"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      opacity="0.65"
+                    />
+
+                    {/* Intersegmental Posterior Groove */}
                     <path
-                      d={`M ${segX + 1.5},15 Q ${segX + 6},21 ${segX + 1.5},27`}
+                      d={`M ${segX + 1},16 Q ${segX + 5},24 ${segX + 1},32`}
                       stroke="#0A0A0A"
                       strokeWidth="1.2"
                       opacity="0.35"
@@ -205,36 +309,63 @@ export default function HeroSection() {
                 );
               })}
 
-              {/* Cephalic Head Capsule */}
+              {/* Cephalic Head Capsule (Predatory Shield Armor) */}
               <path
-                d="M 200,12 C 213,12 222,15 223,21 C 222,27 213,30 200,30 Z"
-                fill="#FF2E93"
+                d="M 224,13 C 240,13 250,17 252,24 C 250,31 240,35 224,35 Z"
+                fill="url(#headCapsuleGrad)"
                 stroke="#0A0A0A"
-                strokeWidth="2.5"
+                strokeWidth="2.4"
               />
 
-              {/* Compound Eyes with Glint */}
-              <circle cx="212" cy="16" r="2.2" fill="#0A0A0A" />
-              <circle cx="213" cy="15.5" r="0.9" fill="#FFFFFF" />
-              <circle cx="212" cy="26" r="2.2" fill="#0A0A0A" />
-              <circle cx="213" cy="25.5" r="0.9" fill="#FFFFFF" />
+              {/* Compound Eyes (Lateral Ocelli with Specular Glint) */}
+              <circle cx="239" cy="18" r="2.4" fill="#0A0A0A" />
+              <circle cx="240.2" cy="17.2" r="0.9" fill="#FFFFFF" />
+              <circle cx="239" cy="30" r="2.4" fill="#0A0A0A" />
+              <circle cx="240.2" cy="29.2" r="0.9" fill="#FFFFFF" />
 
-              {/* Prehensile Forcipules (Poison Jaws) */}
-              <path d="M 216,14 Q 224,17 222,20" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-              <path d="M 216,28 Q 224,25 222,22" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+              {/* Prehensile Poison Forcipules (Venom Jaws) */}
+              <path
+                d="M 244,15 Q 256,17 253,21"
+                stroke="#0A0A0A"
+                strokeWidth="2.8"
+                fill="none"
+                strokeLinecap="round"
+              />
+              <circle cx="253" cy="21" r="1.4" fill="#000000" />
 
-              {/* Long Twitching Sensory Antennae */}
-              <g style={{ transformOrigin: '220px 16px', animation: 'feelerTwitchTop 0.45s ease-in-out infinite' }}>
-                <path d="M 220,16 Q 232,10 248,3" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+              <path
+                d="M 244,33 Q 256,31 253,27"
+                stroke="#0A0A0A"
+                strokeWidth="2.8"
+                fill="none"
+                strokeLinecap="round"
+              />
+              <circle cx="253" cy="27" r="1.4" fill="#000000" />
+
+              {/* Long Articulated Whip Antennae */}
+              <g style={{ transformOrigin: '246px 18px', animation: 'feelerTwitchTop 0.5s ease-in-out infinite' }}>
+                <path
+                  d="M 246,18 Q 262,11 278,3"
+                  stroke="#F59E0B"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  fill="none"
+                />
               </g>
-              <g style={{ transformOrigin: '220px 26px', animation: 'feelerTwitchBottom 0.45s ease-in-out infinite' }}>
-                <path d="M 220,26 Q 232,32 248,39" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+              <g style={{ transformOrigin: '246px 30px', animation: 'feelerTwitchBottom 0.5s ease-in-out infinite' }}>
+                <path
+                  d="M 246,30 Q 262,37 278,45"
+                  stroke="#F59E0B"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  fill="none"
+                />
               </g>
             </svg>
           </div>
         </div>
 
-        {/* Ruler tick marks */}
+        {/* Metric Ruler Tick Marks */}
         <div className="w-full flex justify-between px-2 font-mono text-[9px] text-gray-500 border-t-2 border-[#0A0A0A] pt-1">
           {['0cm', '10cm', '20cm', '30cm', '40cm', '50cm', '60cm', '70cm', '80cm', '90cm', '100cm'].map((mark, idx) => (
             <div key={idx} className="flex flex-col items-center">
