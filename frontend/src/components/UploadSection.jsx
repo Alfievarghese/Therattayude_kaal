@@ -162,7 +162,7 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
                 DROP CENTIPEDE SPECIMEN HERE
               </h3>
               <p className="font-mono text-xs sm:text-sm text-gray-700 font-bold max-w-md mx-auto mb-4">
-                Drag and drop a clear photograph of a centipede (not millipede), or click anywhere inside this boundary.
+                Drag and drop a clear photograph of a centipede (not actual atta/millipede, homie!), or click anywhere inside this boundary.
               </p>
               <div className="inline-block bg-[#0A0A0A] text-[#FFE600] font-mono text-xs uppercase px-3 py-1.5 font-black shadow-brutal-sm">
                 COMPATIBLE: JPG, PNG, WEBP // OPTICAL RESOLUTION PREFERRED
@@ -172,14 +172,14 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
         </div>
 
         {/* Taxonomic Clarification Disclaimer (Centipedes vs Millipedes/Theratta) */}
-        <div className="mt-4 bg-[#FFE600] border-3 border-[#0A0A0A] p-3 text-[#0A0A0A] font-mono text-xs shadow-brutal-sm flex items-start gap-3">
+        <div className="mt-4 bg-[#FFE600] border-3 border-[#0A0A0A] p-3.5 text-[#0A0A0A] font-mono text-xs shadow-brutal-sm flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-[#0A0A0A] shrink-0 mt-0.5" strokeWidth={2.5} />
           <div>
             <span className="font-black uppercase bg-[#0A0A0A] text-[#FFE600] px-2 py-0.5 mr-2 inline-block mb-1">
               ⚠️ TAXONOMIC ADVISORY: CENTIPEDES (കാല്പോത്ത്) ONLY
             </span>
             <p className="font-bold leading-relaxed text-gray-900">
-              In everyday Malayalam, &ldquo;തേരട്ട&rdquo; (Theratta / Atta) refers to <em>millipedes</em> (Class Diplopoda). However, this AI model is <strong>strictly calibrated on predatory CENTIPEDES (Class Chilopoda)</strong> with long outward-facing leg pairs. <u>Please upload centipedes only</u> — round curling millipedes have hundreds of dense microscopic legs that will baffle the neural scanner!
+              Look, in true <strong>USELESS PROJECT</strong> fashion, we proudly named the website <em>&ldquo;തേരട്ടയുടെ കാൽ&rdquo;</em> but we can&apos;t even count actual <strong>atta / theratta</strong> (millipede) legs, homie! Our AI only recognizes predatory <strong>CENTIPEDES (കാല്പോത്ത് / Chilopoda)</strong> with distinct outward-facing legs. Round curling millipedes have hundreds of dense microscopic legs that will cause the neural network to experience existential dread. <u>Centipede photos only!</u>
             </p>
           </div>
         </div>
