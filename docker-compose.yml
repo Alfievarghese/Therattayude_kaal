@@ -10,8 +10,10 @@ services:
     environment:
       - DATA_DIR=/app/data
       - MODEL_PATH=/app/best.pt
+      - STATIC_DIR=/app/static
     volumes:
       - centipede_data:/app/data
+      - frontend_dist:/app/static:ro
 
   frontend:
     build:
@@ -25,7 +27,11 @@ services:
       - "80:80"
     depends_on:
       - backend
+    volumes:
+      - frontend_dist:/usr/share/nginx/html
 
 volumes:
   centipede_data:
     name: therattayude_kaal_data
+  frontend_dist:
+    name: therattayude_kaal_frontend_dist

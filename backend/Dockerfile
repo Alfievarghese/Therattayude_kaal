@@ -19,11 +19,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy model weights, application code, fonts, and assets
 COPY . .
 
-# Create persistent storage mount point for SQLite database and uploads
-RUN mkdir -p /app/data
+# Create persistent storage mount point for SQLite database, uploads, and optional static UI
+RUN mkdir -p /app/data /app/static
 
 ENV DATA_DIR=/app/data
 ENV MODEL_PATH=/app/best.pt
+ENV STATIC_DIR=/app/static
 
 EXPOSE 8000
 

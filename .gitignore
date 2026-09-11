@@ -57,6 +57,7 @@ backend/test_*.jpg
 *.mp4
 *.avi
 *.webm
+augment_*.py
 
 # Internal workspace / agent skills / IDE files
 SKILLS/

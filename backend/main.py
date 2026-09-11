@@ -12,9 +12,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from fastapi import FastAPI, File, HTTPException, Query, UploadFile
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 from ultralytics import YOLO
 
@@ -285,11 +286,77 @@ def get_certificate(submission_id: str):
     )
 
 
-@app.get("/")
-def root():
-    return {
-        "name": "Therattayude Kaal API",
-        "department": "Department of Absolutely Unnecessary Research — Kerala Division",
-        "status": "Operational. Unfortunately.",
-        "motto": "Counting what nobody asked us to count since 2026.",
-    }
+STATIC_DIR = os.environ.get("STATIC_DIR", os.path.join(os.path.dirname(__file__), "static"))
+
+if os.path.isdir(STATIC_DIR) and os.path.exists(os.path.join(STATIC_DIR, "index.html")):
+    assets_dir = os.path.join(STATIC_DIR, "assets")
+    if os.path.isdir(assets_dir):
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+    @app.get("/")
+    def serve_index():
+        return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+    @app.get("/{full_path:path}")
+    def serve_spa(full_path: str):
+        file_path = os.path.join(STATIC_DIR, full_path)
+        if full_path and os.path.exists(file_path) and os.path.isfile(file_path):
+            return FileResponse(file_path)
+        return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+else:
+    @app.get("/")
+    def root(request: Request):
+        accept = request.headers.get("accept", "")
+        if "text/html" in accept:
+            html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therattayude Kaal // API Gateway</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; background: #0c0d0e; color: #fff; padding: 40px 20px; line-height: 1.6; max-width: 750px; margin: 0 auto; }
+        .card { border: 3px solid #00ff66; padding: 30px; box-shadow: 8px 8px 0px #00ff66; background: #141619; border-radius: 4px; }
+        h1 { color: #fff; margin-top: 10px; font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; }
+        .tag { display: inline-block; background: #ff0055; color: white; padding: 4px 10px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; }
+        .box { background: #1b1e22; border-left: 5px solid #00e5ff; padding: 18px; margin: 24px 0; color: #e0e0e0; }
+        code { background: #000; padding: 3px 8px; color: #00ff66; border-radius: 4px; font-family: monospace; font-size: 1rem; border: 1px solid #333; }
+        .links a { color: #00e5ff; text-decoration: none; font-weight: bold; margin-right: 20px; border-bottom: 2px solid #00e5ff; }
+        .links a:hover { color: #fff; border-color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="tag">FASTAPI BACKEND GATEWAY // PORT 8000</span>
+        <h1>🐛 തേരട്ടയുടെ കാൽ — Therattayude Kaal API</h1>
+        <p style="color: #888; font-size: 0.95rem; margin-bottom: 20px;">Department of Absolutely Unnecessary Research — Kerala Division</p>
+        
+        <div class="box">
+            <h3 style="margin-top: 0; color: #00e5ff;">⚠️ Notice for Browser Visitors</h3>
+            <p>You have connected directly to the <strong>Backend AI API (Port 8000)</strong> instead of the <strong>Frontend Web Application (Port 80)</strong>.</p>
+            
+            <p><strong>To view the full interactive website:</strong></p>
+            <ul>
+                <li>If using <strong>Tailscale Funnel</strong> on your VPS, switch your funnel from port 8000 to port 80:
+                    <br><br><code>tailscale funnel 80</code> (or <code>tailscale serve 80</code>)<br><br>
+                </li>
+                <li>Or visit your VPS IP address directly on Port 80.</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="/docs">Interactive API Docs (/docs)</a>
+            <a href="/leaderboard">View Leaderboard API (/leaderboard)</a>
+        </div>
+    </div>
+</body>
+</html>"""
+            return HTMLResponse(content=html_content)
+
+        return {
+            "name": "Therattayude Kaal API",
+            "department": "Department of Absolutely Unnecessary Research — Kerala Division",
+            "status": "Operational. Unfortunately.",
+            "motto": "Counting what nobody asked us to count since 2026.",
+            "notice": "Interactive UI is hosted on Port 80. If using Tailscale Funnel, run 'tailscale funnel 80'."
+        }

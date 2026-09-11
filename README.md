@@ -110,8 +110,16 @@ Open your browser and navigate to:
 ```
 http://YOUR_VPS_IP
 ```
-- **Web UI:** `http://YOUR_VPS_IP`
+- **Web UI:** `http://YOUR_VPS_IP` (Port 80)
 - **FastAPI Interactive Docs (Swagger):** `http://YOUR_VPS_IP:8000/docs`
+
+> [!TIP]
+> **Using Tailscale Funnel or Cloudflare Tunnel?**
+> If exposing your VPS through Tailscale Funnel (e.g., `https://your-node.ts.net`) or a single domain tunnel, forward **Port 80**:
+> ```bash
+> tailscale funnel 80
+> ```
+> Port 80 (Nginx) serves the interactive React frontend AND automatically reverse-proxies all API calls (`/detect`, `/leaderboard`, `/certificate`, `/recount`) directly to the backend under that single URL with zero CORS issues!
 
 ---
 
