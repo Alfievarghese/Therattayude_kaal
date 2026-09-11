@@ -154,7 +154,7 @@ export default function AnalysisSection({ result, isAnalyzing }) {
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center p-6 text-center">
-                  <CentipedeSpinner size={64} />
+                  <CentipedeSpinner size={72} dark={true} />
                   <p className="font-mono text-xs text-[#FFE600] font-bold mt-4 uppercase tracking-wider">
                     ANALYZING APPENDAGES...
                   </p>

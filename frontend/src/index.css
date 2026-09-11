@@ -266,23 +266,81 @@ body {
   z-index: 20;
 }
 
-/* Leg wiggle for spinner */
-@keyframes legWiggle {
-  0%, 100% { transform: rotate(-18deg); }
-  50% { transform: rotate(18deg); }
-}
-
-.spinner-leg {
-  animation: legWiggle 0.18s ease-in-out infinite;
-}
-
-@keyframes spinnerRotate {
+/* Telemetry Podiatric Radar Spinner Animations */
+@keyframes radarSweep {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+.animate-radar-sweep {
+  animation: radarSweep 2s linear infinite;
+  transform-origin: 50px 50px;
+  will-change: transform;
+}
+
+@keyframes radarCounter {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.animate-radar-counter {
+  animation: radarCounter 4.2s linear infinite;
+  transform-origin: 50px 50px;
+  will-change: transform;
+}
+
+@keyframes reticlePulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-reticle-pulse {
+  animation: reticlePulse 1.4s ease-in-out infinite;
+  transform-origin: 50px 50px;
+}
+
+@keyframes spinnerLegPaddleTop {
+  0%, 100% { transform: rotate(-22deg); }
+  50% { transform: rotate(24deg); }
+}
+
+@keyframes spinnerLegPaddleBottom {
+  0%, 100% { transform: rotate(24deg); }
+  50% { transform: rotate(-22deg); }
+}
+
+.spinner-leg-top {
+  animation: spinnerLegPaddleTop 0.22s ease-in-out infinite;
+}
+
+.spinner-leg-bottom {
+  animation: spinnerLegPaddleBottom 0.22s ease-in-out infinite;
+}
+
+@keyframes spinnerBodyWave {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-1.2px) rotate(-0.5deg); }
+  75% { transform: translateY(1.2px) rotate(0.5deg); }
+}
+
+.spinner-specimen-wave {
+  animation: spinnerBodyWave 0.7s ease-in-out infinite;
+  transform-origin: 50px 50px;
+}
+
+@keyframes footPing {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
+.animate-foot-ping {
+  animation: footPing 0.55s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
 .animate-spin-mechanical {
-  animation: spinnerRotate 1.2s steps(8) infinite;
+  animation: radarSweep 2s linear infinite;
+  transform-origin: 50px 50px;
 }
 
 /* Rubber Stamp */
