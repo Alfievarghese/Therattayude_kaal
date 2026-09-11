@@ -110,71 +110,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Classified Government Telemetry Terminal Readouts (4 Stat Boxes) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-8 pt-6 border-t-3 border-[#0A0A0A] font-mono">
-            {/* Stat Box 1: Detection Engine */}
-            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
-              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
-                <span>[ SYS_PARAM // 01 ]</span>
-                <span className="inline-flex items-center gap-1 text-[#00E676] text-[9px] font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-pulse" />
-                  ONLINE
-                </span>
-              </div>
-              <div className="font-archivo text-base sm:text-lg text-white font-black tracking-tight">
-                YOLOv8s
-              </div>
-              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
-                <span>MODEL: DEEP VISION</span>
-                <span className="text-[#00E676] font-bold">46.2% mAP</span>
-              </div>
-            </div>
 
-            {/* Stat Box 2: Target Class */}
-            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
-              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
-                <span>[ SYS_PARAM // 02 ]</span>
-                <span className="text-gray-400 text-[9px] font-bold">TAXA</span>
-              </div>
-              <div className="font-archivo text-base sm:text-lg text-[#FFE600] font-black tracking-tight">
-                centipede_leg
-              </div>
-              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
-                <span>APPENDAGE TYPE</span>
-                <span className="text-white font-bold">CHILOPODA</span>
-              </div>
-            </div>
-
-            {/* Stat Box 3: Utility Level */}
-            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FF3333] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
-              <div className="flex items-center justify-between text-[#FF3333] font-black uppercase text-[10px] tracking-wider mb-1">
-                <span>[ SYS_PARAM // 03 ]</span>
-                <span className="text-[#FF3333] text-[9px] font-bold">CRITICAL</span>
-              </div>
-              <div className="font-archivo text-base sm:text-lg text-[#FF3333] font-black tracking-tight">
-                0.00% (STRICT)
-              </div>
-              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
-                <span>SOCIOECONOMIC USE</span>
-                <span className="text-[#FF3333] font-bold">NULL_VALUE</span>
-              </div>
-            </div>
-
-            {/* Stat Box 4: Division */}
-            <div className="bg-[#0A0A0A] text-white border-2 border-[#0A0A0A] border-l-6 border-l-[#FFE600] p-3.5 shadow-[4px_4px_0px_#0A0A0A] relative group hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#0A0A0A] transition-all">
-              <div className="flex items-center justify-between text-[#FFE600] font-black uppercase text-[10px] tracking-wider mb-1">
-                <span>[ SYS_PARAM // 04 ]</span>
-                <span className="text-gray-400 text-[9px] font-bold">JURISDICTION</span>
-              </div>
-              <div className="font-archivo text-base sm:text-lg text-white font-black tracking-tight">
-                KERALA HQ
-              </div>
-              <div className="flex items-center justify-between text-[11px] text-gray-400 mt-1.5 pt-1.5 border-t border-white/15">
-                <span>STATION CODE</span>
-                <span className="text-[#FFE600] font-bold">09.93°N // 76.26°E</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
