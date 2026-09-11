@@ -7,6 +7,7 @@ import RecountSection from './components/RecountSection';
 import CertificateSection from './components/CertificateSection';
 import Leaderboard from './components/Leaderboard';
 import Preloader from './components/Preloader';
+import TopCornerCentipede from './components/TopCornerCentipede';
 
 const API_BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/+$/, '') : '';
 
@@ -122,15 +123,20 @@ export default function App() {
       )}
 
       {/* Top Floating Control Bar */}
-      <div className="sticky top-0 z-40 bg-[#0A0A0A] text-white border-b-3 border-[#0A0A0A] px-4 py-1.5 flex items-center justify-between text-xs font-mono">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
-          <span className="text-[#FFE600] font-black uppercase tracking-wider hidden sm:inline">
-            KERALA PODIATRIC TELEMETRY
-          </span>
-          <span className="text-gray-400 text-[11px]">
-            [ YOLOv8s ARTHROPOD TELEMETRY ONLINE ]
-          </span>
+      <div className="sticky top-0 z-40 bg-[#0A0A0A] text-white border-b-3 border-[#0A0A0A] px-3 sm:px-4 py-1.5 flex items-center justify-between text-xs font-mono">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Endless Centipede Running Loop in Top-Left Corner */}
+          <TopCornerCentipede />
+
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
+            <span className="text-[#FFE600] font-black uppercase tracking-wider hidden md:inline">
+              KERALA PODIATRIC TELEMETRY
+            </span>
+            <span className="text-gray-400 text-[11px] hidden sm:inline">
+              [ YOLOv8s ARTHROPOD TELEMETRY ONLINE ]
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -152,70 +158,37 @@ export default function App() {
         </div>
 
         {/* Upload Portal */}
-        <UploadSection onUpload={handleUpload} isAnalyzing={isAnalyzing} />
+        <UploadSection
+          onUpload={handleUpload}
+          isAnalyzing={isAnalyzing}
+        />
 
-        {/* Live Analysis Terminal */}
+        {/* Detection Analysis with Simulated Stepper & Counter */}
         <div ref={analysisSectionRef}>
-          <AnalysisSection result={result} isAnalyzing={isAnalyzing} />
+          <AnalysisSection
+            result={result}
+            isAnalyzing={isAnalyzing}
+          />
         </div>
 
-        {/* Recount & Certificate Sections (Post-Result) */}
+        {/* Interactive Recount / Dispute Section */}
         {result && (
-          <>
-            <RecountSection submissionId={result.submission_id} />
-            <CertificateSection submissionId={result.submission_id} />
+          <RecountSection
+            submissionId={result.submission_id}
+            initialLegCount={result.leg_count}
+          />
+        )}
 
-            {/* Reset Button */}
-            <div className="text-center py-6">
-              <button
-                type="button"
-                onClick={handleReset}
-                className="brutal-btn brutal-btn-white text-sm inline-flex items-center gap-2"
-              >
-                <RefreshCw className="w-4 h-4 text-black" strokeWidth={2.5} />
-                AUDIT ANOTHER SPECIMEN
-              </button>
-            </div>
-          </>
+        {/* Ultra-Luxurious Royal Scientific Diploma */}
+        {result && (
+          <CertificateSection
+            submissionId={result.submission_id}
+          />
         )}
 
         {/* Persistent Leaderboard */}
         <Leaderboard />
       </div>
-
-      {/* Industrial Neobrutalist Footer */}
-      <footer className="w-full bg-[#0A0A0A] text-white border-t-4 border-[#0A0A0A] mt-16 py-10 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <p className="font-malayalam text-xl md:text-2xl font-black text-[#FFE600] mb-1">
-              തേരട്ടയുടെ കാൽ എണ്ണുന്നത് പോലെ
-            </p>
-            <p className="font-mono text-xs text-gray-400 font-bold uppercase">
-              DEPARTMENT OF ABSOLUTELY UNNECESSARY RESEARCH — KERALA DIVISION
-            </p>
-            <p className="font-mono text-[11px] text-gray-500 mt-1">
-              No centipedes were harmed during this calculation. Several were mildly perplexed.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <button
-              type="button"
-              onClick={() => setShowPreloader(true)}
-              className="text-[11px] text-[#FFE600] hover:underline font-mono uppercase cursor-pointer inline-flex items-center gap-1.5"
-            >
-              <Terminal className="w-3.5 h-3.5" strokeWidth={2.5} />
-              [ RE-RUN SYSTEM BOOT SEQUENCE ]
-            </button>
-            <div className="font-mono text-xs tracking-widest text-[#FFE600] select-none">
-              ||| | |||| || | ||| |||| | ||
-            </div>
-            <div className="font-mono text-[10px] text-gray-400 uppercase">
-              BUILD: NEOPODIATRY-2026.09.11 // V2.5
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

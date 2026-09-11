@@ -203,6 +203,17 @@ body {
   animation-duration: 6.5s;
 }
 
+/* Endless top-corner mini running centipede loop */
+@keyframes topCornerCrawl {
+  0% { transform: translateX(-85px); }
+  100% { transform: translateX(78px); }
+}
+
+.animate-top-corner-crawl {
+  animation: topCornerCrawl 2.6s linear infinite;
+  will-change: transform;
+}
+
 /* Authentic Arthropod Metachronal Leg Walking Rhythm */
 @keyframes legPaddleTop {
   0%, 100% { transform: rotate(-24deg); }

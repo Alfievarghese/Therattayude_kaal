@@ -6,6 +6,7 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
   const [preview, setPreview] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [sampleLoading, setSampleLoading] = useState(false);
+  const [sampleIndex, setSampleIndex] = useState(0);
   const fileInputRef = useRef(null);
 
   const handleFile = (file) => {
@@ -176,40 +177,33 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
           <AlertTriangle className="w-5 h-5 text-[#0A0A0A] shrink-0 mt-0.5" strokeWidth={2.5} />
           <div>
             <span className="font-black uppercase bg-[#0A0A0A] text-[#FFE600] px-2 py-0.5 mr-2 inline-block mb-1">
-              ⚠️ TAXONOMIC ADVISORY: CENTIPEDES (കാല്പോത്ത്) ONLY
+              ⚠️ TAXONOMIC ADVISORY: CENTIPEDES (പഴുതാര) ONLY
             </span>
             <p className="font-bold leading-relaxed text-gray-900">
-              Look, in true <strong>USELESS PROJECT</strong> fashion, we proudly named the website <em>&ldquo;തേരട്ടയുടെ കാൽ&rdquo;</em> but we can&apos;t even count actual <strong>atta / theratta</strong> (millipede) legs, homie! Our AI only recognizes predatory <strong>CENTIPEDES (കാല്പോത്ത് / Chilopoda)</strong> with distinct outward-facing legs. Round curling millipedes have hundreds of dense microscopic legs that will cause the neural network to experience existential dread. <u>Centipede photos only!</u>
+              Look, in true <strong>USELESS PROJECT</strong> fashion, we proudly named the website <em>&ldquo;തേരട്ടയുടെ കാൽ&rdquo;</em> but we can&apos;t even count actual <strong>atta / theratta</strong> (millipede) legs, homie! Our AI only recognizes predatory <strong>CENTIPEDES (പഴുതാര / Chilopoda)</strong> with distinct outward-facing legs. Round curling millipedes have hundreds of dense microscopic legs that will cause the neural network to experience existential dread. <u>Centipede photos only!</u>
             </p>
           </div>
         </div>
 
-        {/* Quick Sample Selector */}
+        {/* Quick Sample Selector - Single Button */}
         {!preview && (
           <div className="mt-6 pt-4 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs">
             <span className="font-bold text-gray-700 uppercase">
-              // NO SPECIMEN ON HAND? LOAD OFFICIAL ARCHIVES:
+              // NO SPECIMEN ON HAND? LOAD OFFICIAL ARCHIVE:
             </span>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={() => handleLoadSample('/samples/sample1.jpg', 'specimen_alpha.jpg')}
-                disabled={sampleLoading || isAnalyzing}
-                className="brutal-btn brutal-btn-white text-xs px-3 py-1.5 inline-flex items-center gap-1.5"
-              >
-                <FlaskConical className="w-3.5 h-3.5 text-black" strokeWidth={2.5} />
-                LOAD SPECIMEN ALPHA
-              </button>
-              <button
-                type="button"
-                onClick={() => handleLoadSample('/samples/sample2.jpg', 'specimen_beta.jpg')}
-                disabled={sampleLoading || isAnalyzing}
-                className="brutal-btn brutal-btn-white text-xs px-3 py-1.5 inline-flex items-center gap-1.5"
-              >
-                <FlaskConical className="w-3.5 h-3.5 text-black" strokeWidth={2.5} />
-                LOAD SPECIMEN BETA
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const sampleNum = sampleIndex % 2 === 0 ? '1' : '2';
+                setSampleIndex((prev) => prev + 1);
+                handleLoadSample(`/samples/sample${sampleNum}.jpg`, `specimen_sample_${sampleNum}.jpg`);
+              }}
+              disabled={sampleLoading || isAnalyzing}
+              className="brutal-btn brutal-btn-white text-xs px-4 py-2 inline-flex items-center gap-2 font-black"
+            >
+              <FlaskConical className="w-4 h-4 text-black" strokeWidth={2.5} />
+              LOAD SPECIMEN
+            </button>
           </div>
         )}
 

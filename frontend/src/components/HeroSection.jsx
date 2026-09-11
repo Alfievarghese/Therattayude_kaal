@@ -131,24 +131,37 @@ export default function HeroSection() {
       {/* Industrial Metric Ruler & Crawling Centipede Track */}
       <div className="w-full bg-[#FAF8F5] border-t-3 border-[#0A0A0A] pt-4 pb-2 relative overflow-hidden select-none">
         {/* Animated Centipede on track */}
-        <div className="w-full h-10 relative pointer-events-auto mb-1 cursor-grab" title="Live Centipede Specimen — Hover to accelerate crawl telemetry">
+        <div className="w-full h-11 relative pointer-events-auto mb-1 cursor-grab" title="Live Centipede Specimen — Hover to accelerate crawl telemetry">
           <div className="animate-crawl absolute top-0 flex items-center">
-            <svg width="240" height="38" viewBox="0 0 240 38" className="centipede-body-wave">
-              {/* Caudal Cerci (Anal Legs pointing backwards) */}
-              <polyline points="18,16 9,13 1,9" stroke="#0A0A0A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              <polyline points="18,21 9,24 1,28" stroke="#0A0A0A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <svg width="250" height="42" viewBox="0 0 250 42" className="centipede-body-wave">
+              <defs>
+                <linearGradient id="chitinGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FFE600" />
+                  <stop offset="100%" stopColor="#F59E0B" />
+                </linearGradient>
+                <linearGradient id="chitinGradB" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#D97706" />
+                </linearGradient>
+              </defs>
 
-              {/* 16 Articulated Tergite Body Segments with Metachronal Jointed Walking Legs */}
+              {/* Caudal Cerci (Elongated Rear Sensory Anal Legs) */}
+              <path d="M 16,17 Q 8,13 0,7" stroke="#0A0A0A" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+              <path d="M 16,25 Q 8,29 0,35" stroke="#0A0A0A" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+
+              {/* 16 Overlapping Articulated Chitinous Tergites with Jointed Leg Pairs */}
               {Array.from({ length: 16 }).map((_, i) => {
-                const segX = 18 + i * 11;
-                const legX = segX + 5;
-                const delay = (15 - i) * 0.032;
+                const segX = 18 + i * 11.5;
+                const legX = segX + 5.5;
+                const delay = (15 - i) * 0.034;
+                const isEven = i % 2 === 0;
+
                 return (
                   <g key={i}>
-                    {/* Upper Jointed Leg (Coxa -> Femur -> Tarsus) */}
-                    <g style={{ transformOrigin: `${legX}px 11px`, animation: 'legPaddleTop 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+                    {/* Top Jointed Leg: Coxa -> Femur -> Tarsus & Claw */}
+                    <g style={{ transformOrigin: `${legX}px 13px`, animation: 'legPaddleTop 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
                       <polyline
-                        points={`${legX},11 ${legX - 4},5 ${legX - 9},1`}
+                        points={`${legX},13 ${legX - 2},7 ${legX - 6},3 ${legX - 11},0`}
                         stroke="#0A0A0A"
                         strokeWidth="2.2"
                         strokeLinecap="round"
@@ -156,10 +169,11 @@ export default function HeroSection() {
                         fill="none"
                       />
                     </g>
-                    {/* Lower Jointed Leg (Coxa -> Femur -> Tarsus) */}
-                    <g style={{ transformOrigin: `${legX}px 26px`, animation: 'legPaddleBottom 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+
+                    {/* Bottom Jointed Leg: Coxa -> Femur -> Tarsus & Claw */}
+                    <g style={{ transformOrigin: `${legX}px 29px`, animation: 'legPaddleBottom 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
                       <polyline
-                        points={`${legX},26 ${legX - 4},32 ${legX - 9},36`}
+                        points={`${legX},29 ${legX - 2},35 ${legX - 6},39 ${legX - 11},42`}
                         stroke="#0A0A0A"
                         strokeWidth="2.2"
                         strokeLinecap="round"
@@ -167,46 +181,54 @@ export default function HeroSection() {
                         fill="none"
                       />
                     </g>
-                    {/* Tergite Shell Plate */}
-                    <rect
-                      x={segX}
-                      y="11"
-                      width="12"
-                      height="15"
-                      rx="3"
-                      fill={i % 2 === 0 ? '#FFE600' : '#F59E0B'}
+
+                    {/* Overlapping Rounded Tergite Chitin Plate */}
+                    <ellipse
+                      cx={segX + 5.5}
+                      cy="21"
+                      rx="7.5"
+                      ry="8.5"
+                      fill={isEven ? 'url(#chitinGradA)' : 'url(#chitinGradB)'}
                       stroke="#0A0A0A"
                       strokeWidth="2"
                     />
-                    {/* Dorsal Medial Ridge Accent */}
-                    <line x1={segX + 2} y1="18.5" x2={segX + 10} y2="18.5" stroke="#0A0A0A" strokeWidth="1" opacity="0.35" />
+
+                    {/* Tergite Posterior Border Ridge */}
+                    <path
+                      d={`M ${segX + 1.5},15 Q ${segX + 6},21 ${segX + 1.5},27`}
+                      stroke="#0A0A0A"
+                      strokeWidth="1.2"
+                      opacity="0.35"
+                      fill="none"
+                    />
                   </g>
                 );
               })}
 
-              {/* Cephalic Head Plate */}
+              {/* Cephalic Head Capsule */}
               <path
-                d="M 194,10 C 205,10 213,13 214,18.5 C 213,24 205,27 194,27 Z"
+                d="M 200,12 C 213,12 222,15 223,21 C 222,27 213,30 200,30 Z"
                 fill="#FF2E93"
                 stroke="#0A0A0A"
                 strokeWidth="2.5"
               />
-              {/* Compound Eye spots */}
-              <circle cx="204" cy="14" r="2" fill="#0A0A0A" />
-              <circle cx="205" cy="13.5" r="0.8" fill="#FFFFFF" />
-              <circle cx="204" cy="23" r="2" fill="#0A0A0A" />
-              <circle cx="205" cy="22.5" r="0.8" fill="#FFFFFF" />
 
-              {/* Forcipules / Poison Claws */}
-              <path d="M 208,12 Q 215,14 213,17" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
-              <path d="M 208,25 Q 215,23 213,20" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              {/* Compound Eyes with Glint */}
+              <circle cx="212" cy="16" r="2.2" fill="#0A0A0A" />
+              <circle cx="213" cy="15.5" r="0.9" fill="#FFFFFF" />
+              <circle cx="212" cy="26" r="2.2" fill="#0A0A0A" />
+              <circle cx="213" cy="25.5" r="0.9" fill="#FFFFFF" />
 
-              {/* Twitching Sensory Antennae */}
-              <g style={{ transformOrigin: '212px 14px', animation: 'feelerTwitchTop 0.45s ease-in-out infinite' }}>
-                <path d="M 212,14 Q 224,9 237,3" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              {/* Prehensile Forcipules (Poison Jaws) */}
+              <path d="M 216,14 Q 224,17 222,20" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+              <path d="M 216,28 Q 224,25 222,22" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+
+              {/* Long Twitching Sensory Antennae */}
+              <g style={{ transformOrigin: '220px 16px', animation: 'feelerTwitchTop 0.45s ease-in-out infinite' }}>
+                <path d="M 220,16 Q 232,10 248,3" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
               </g>
-              <g style={{ transformOrigin: '212px 23px', animation: 'feelerTwitchBottom 0.45s ease-in-out infinite' }}>
-                <path d="M 212,23 Q 224,28 237,34" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              <g style={{ transformOrigin: '220px 26px', animation: 'feelerTwitchBottom 0.45s ease-in-out infinite' }}>
+                <path d="M 220,26 Q 232,32 248,39" stroke="#0A0A0A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
               </g>
             </svg>
           </div>
