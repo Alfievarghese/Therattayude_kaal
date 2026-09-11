@@ -255,7 +255,7 @@ def generate_certificate(
         b = draw.textbbox((0, 0), t_mal_c, font=f_mal_leg)
         draw.text((cnt_x - (b[2] - b[0]) // 2, zone_y + 99), t_mal_c, font=f_mal_leg, fill=c_muted)
 
-        t_sub_stats = "Accuracy: 94.2%   •   Margin of Doubt: ± Several Legs   •   YOLOv8 Neural Audit"
+        t_sub_stats = "Accuracy: 96.2%   •   Margin of Doubt: ± Several Legs   •   YOLOv8s Deep Neural Audit"
         b = draw.textbbox((0, 0), t_sub_stats, font=f_mono)
         draw.text((cnt_x - (b[2] - b[0]) // 2, zone_y + 120), t_sub_stats, font=f_mono, fill=c_charcoal)
 

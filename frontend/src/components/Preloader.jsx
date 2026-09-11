@@ -10,7 +10,7 @@ export default function Preloader({ onComplete }) {
 
   const bootMessages = [
     { at: 10, text: 'INITIATING KERALA REPROBATE PODIATRIC SUBSYSTEM...' },
-    { at: 28, text: 'MOUNTING YOLOv8 ARTHROPOD INTERROGATION MATRIX...' },
+    { at: 28, text: 'MOUNTING YOLOv8s HIGH-ACCURACY PODIATRIC MATRIX...' },
     { at: 45, text: 'RETRIEVING FOLKLORIC PRECEPT: "തേരട്ടയുടെ കാൽ എണ്ണൽ"...' },
     { at: 65, text: 'CONNECTING TO HON. MANDI MASALA (SUPREME ARBITER)...' },
     { at: 82, text: 'CONFIRMING 0.0000% SOCIOECONOMIC UTILITY... [VERIFIED]' },
@@ -157,68 +157,124 @@ export default function Preloader({ onComplete }) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Sinuous Crawling Centipede */}
+              {/* Sinuous Crawling Centipede with Realistic Jointed Anatomy */}
               {Array.from({ length: 18 }).map((_, i) => {
                 const cx = 35 + i * 24;
-                const waveOffset = Math.sin((progress * 0.15) + i * 0.45) * 6;
+                const waveOffset = Math.sin((progress * 0.22) + i * 0.45) * 5.5;
                 const cy = 30 + waveOffset;
                 const isHead = i === 17;
+                const isTail = i === 0;
+
+                // Dynamic walking leg paddle phases
+                const legWalkPhase = (progress * 0.35) - (i * 0.5);
+                const legOffsetTop = Math.sin(legWalkPhase) * 7;
+                const legOffsetBottom = Math.cos(legWalkPhase) * 7;
+
                 return (
                   <g key={i}>
-                    {/* Top Legs */}
-                    <line
-                      x1={cx}
-                      y1={cy - 6}
-                      x2={cx - 5 + Math.cos((progress * 0.3) + i) * 6}
-                      y2={cy - 20}
+                    {/* Tail Caudal Cerci (Anal feelers) */}
+                    {isTail && (
+                      <>
+                        <path
+                          d={`M ${cx - 6} ${cy - 2} Q ${cx - 16} ${cy - 8 + Math.sin(progress * 0.2) * 3} ${cx - 28} ${cy - 12}`}
+                          stroke="#0A0A0A"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          fill="none"
+                        />
+                        <path
+                          d={`M ${cx - 6} ${cy + 2} Q ${cx - 16} ${cy + 8 + Math.sin(progress * 0.2) * 3} ${cx - 28} ${cy + 12}`}
+                          stroke="#0A0A0A"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          fill="none"
+                        />
+                      </>
+                    )}
+
+                    {/* Top Jointed Leg (Body -> Knee -> Claws) */}
+                    <polyline
+                      points={`${cx},${cy - 6} ${cx - 3 + legOffsetTop * 0.7},${cy - 14} ${cx - 7 + legOffsetTop},${cy - 22}`}
                       stroke="#0A0A0A"
-                      strokeWidth="2.5"
+                      strokeWidth="2.4"
                       strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
                     />
-                    {/* Bottom Legs */}
-                    <line
-                      x1={cx}
-                      y1={cy + 6}
-                      x2={cx - 5 + Math.sin((progress * 0.3) + i) * 6}
-                      y2={cy + 20}
+
+                    {/* Bottom Jointed Leg (Body -> Knee -> Claws) */}
+                    <polyline
+                      points={`${cx},${cy + 6} ${cx - 3 + legOffsetBottom * 0.7},${cy + 14} ${cx - 7 + legOffsetBottom},${cy + 22}`}
                       stroke="#0A0A0A"
-                      strokeWidth="2.5"
+                      strokeWidth="2.4"
                       strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
                     />
-                    {/* Segment Body */}
+
+                    {/* Tergite Segment Body Plate */}
                     <ellipse
                       cx={cx}
                       cy={cy}
-                      rx={isHead ? 11 : 9}
-                      ry={isHead ? 10 : 8}
-                      fill={isHead ? '#FF2E93' : '#F59E0B'}
+                      rx={isHead ? 12 : 10}
+                      ry={isHead ? 11 : 8.5}
+                      fill={isHead ? '#FF2E93' : (i % 2 === 0 ? '#FFE600' : '#F59E0B')}
                       stroke="#0A0A0A"
                       strokeWidth="2.5"
                     />
+                    {/* Medial Segment Highlight */}
+                    {!isHead && (
+                      <line
+                        x1={cx - 5}
+                        y1={cy}
+                        x2={cx + 5}
+                        y2={cy}
+                        stroke="#0A0A0A"
+                        strokeWidth="1.2"
+                        opacity="0.3"
+                      />
+                    )}
+
+                    {/* Head Cephalic Structure */}
                     {isHead && (
                       <>
-                        {/* Antennae */}
-                        <line
-                          x1={cx + 6}
-                          y1={cy - 5}
-                          x2={cx + 18}
-                          y2={cy - 16}
+                        {/* Poison Claws / Forcipules */}
+                        <path
+                          d={`M ${cx + 7} ${cy - 7} Q ${cx + 14} ${cy - 5} ${cx + 12} ${cy - 1}`}
                           stroke="#0A0A0A"
                           strokeWidth="2"
                           strokeLinecap="round"
+                          fill="none"
                         />
-                        <line
-                          x1={cx + 6}
-                          y1={cy + 5}
-                          x2={cx + 18}
-                          y2={cy + 16}
+                        <path
+                          d={`M ${cx + 7} ${cy + 7} Q ${cx + 14} ${cy + 5} ${cx + 12} ${cy + 1}`}
                           stroke="#0A0A0A"
                           strokeWidth="2"
                           strokeLinecap="round"
+                          fill="none"
                         />
-                        {/* Eyes */}
-                        <circle cx={cx + 5} cy={cy - 3} r="1.5" fill="#FFFFFF" stroke="#0A0A0A" strokeWidth="1" />
-                        <circle cx={cx + 5} cy={cy + 3} r="1.5" fill="#FFFFFF" stroke="#0A0A0A" strokeWidth="1" />
+
+                        {/* Twitching Whip-Like Antennae */}
+                        <path
+                          d={`M ${cx + 6} ${cy - 5} Q ${cx + 17} ${cy - 13 + Math.sin(progress * 0.3) * 3} ${cx + 30} ${cy - 18 + Math.cos(progress * 0.3) * 5}`}
+                          stroke="#0A0A0A"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          fill="none"
+                        />
+                        <path
+                          d={`M ${cx + 6} ${cy + 5} Q ${cx + 17} ${cy + 13 + Math.sin(progress * 0.3) * 3} ${cx + 30} ${cy + 18 + Math.cos(progress * 0.3) * 5}`}
+                          stroke="#0A0A0A"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          fill="none"
+                        />
+
+                        {/* Compound Eyes with Glint */}
+                        <circle cx={cx + 5} cy={cy - 4} r="2" fill="#0A0A0A" />
+                        <circle cx={cx + 5.8} cy={cy - 4.5} r="0.8" fill="#FFFFFF" />
+                        <circle cx={cx + 5} cy={cy + 4} r="2" fill="#0A0A0A" />
+                        <circle cx={cx + 5.8} cy={cy + 3.5} r="0.8" fill="#FFFFFF" />
                       </>
                     )}
                   </g>

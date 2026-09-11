@@ -129,7 +129,7 @@ export default function App() {
             KERALA PODIATRIC TELEMETRY
           </span>
           <span className="text-gray-400 text-[11px]">
-            [ YOLOv8 ARTHROPOD SCANNER ONLINE ]
+            [ YOLOv8s ARTHROPOD TELEMETRY ONLINE ]
           </span>
         </div>
         <div className="flex items-center gap-3">

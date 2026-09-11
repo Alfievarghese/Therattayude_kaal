@@ -82,7 +82,7 @@ export default function HeroSection() {
 
               {/* Tagline */}
               <p className="font-mono text-sm sm:text-base text-gray-800 font-bold max-w-xl leading-relaxed">
-                &ldquo;Counting the legs of a centipede&rdquo; — A Malayalam adage for the single most unnecessary task conceivable to human imagination. Built with custom YOLOv8 computer vision.
+                &ldquo;Counting the legs of a centipede&rdquo; — A Malayalam adage for the single most unnecessary task conceivable to human imagination. Upgraded to custom YOLOv8s deep vision (46.2% mAP50 precision).
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t-3 border-[#0A0A0A] font-mono text-xs">
             <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
               <div className="text-gray-500 font-bold uppercase text-[10px]">DETECTION ENGINE</div>
-              <div className="font-archivo text-sm text-[#0A0A0A] mt-0.5">YOLOv8 NANO</div>
+              <div className="font-archivo text-sm text-[#0A0A0A] mt-0.5 font-black">YOLOv8s (SMALL)</div>
             </div>
             <div className="bg-[#F3F4F6] border-2 border-[#0A0A0A] p-3 shadow-brutal-sm">
               <div className="text-gray-500 font-bold uppercase text-[10px]">TARGET CLASS</div>
@@ -131,32 +131,83 @@ export default function HeroSection() {
       {/* Industrial Metric Ruler & Crawling Centipede Track */}
       <div className="w-full bg-[#FAF8F5] border-t-3 border-[#0A0A0A] pt-4 pb-2 relative overflow-hidden select-none">
         {/* Animated Centipede on track */}
-        <div className="w-full h-8 relative pointer-events-none mb-1">
+        <div className="w-full h-10 relative pointer-events-auto mb-1 cursor-grab" title="Live Centipede Specimen — Hover to accelerate crawl telemetry">
           <div className="animate-crawl absolute top-0 flex items-center">
-            <svg width="140" height="30" viewBox="0 0 140 30">
-              {/* Segments */}
-              <rect x="25" y="8" width="85" height="14" rx="2" fill="#FFE600" stroke="#0A0A0A" strokeWidth="2.5" />
-              <line x1="40" y1="8" x2="40" y2="22" stroke="#0A0A0A" strokeWidth="2" />
-              <line x1="55" y1="8" x2="55" y2="22" stroke="#0A0A0A" strokeWidth="2" />
-              <line x1="70" y1="8" x2="70" y2="22" stroke="#0A0A0A" strokeWidth="2" />
-              <line x1="85" y1="8" x2="85" y2="22" stroke="#0A0A0A" strokeWidth="2" />
-              <line x1="100" y1="8" x2="100" y2="22" stroke="#0A0A0A" strokeWidth="2" />
+            <svg width="240" height="38" viewBox="0 0 240 38" className="centipede-body-wave">
+              {/* Caudal Cerci (Anal Legs pointing backwards) */}
+              <polyline points="18,16 9,13 1,9" stroke="#0A0A0A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              <polyline points="18,21 9,24 1,28" stroke="#0A0A0A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
 
-              {/* Head */}
-              <polygon points="110,7 126,15 110,23" fill="#FFE600" stroke="#0A0A0A" strokeWidth="2.5" />
-              <circle cx="118" cy="13" r="2" fill="#0A0A0A" />
+              {/* 16 Articulated Tergite Body Segments with Metachronal Jointed Walking Legs */}
+              {Array.from({ length: 16 }).map((_, i) => {
+                const segX = 18 + i * 11;
+                const legX = segX + 5;
+                const delay = (15 - i) * 0.032;
+                return (
+                  <g key={i}>
+                    {/* Upper Jointed Leg (Coxa -> Femur -> Tarsus) */}
+                    <g style={{ transformOrigin: `${legX}px 11px`, animation: 'legPaddleTop 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+                      <polyline
+                        points={`${legX},11 ${legX - 4},5 ${legX - 9},1`}
+                        stroke="#0A0A0A"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                    </g>
+                    {/* Lower Jointed Leg (Coxa -> Femur -> Tarsus) */}
+                    <g style={{ transformOrigin: `${legX}px 26px`, animation: 'legPaddleBottom 0.28s ease-in-out infinite', animationDelay: `${delay}s` }}>
+                      <polyline
+                        points={`${legX},26 ${legX - 4},32 ${legX - 9},36`}
+                        stroke="#0A0A0A"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                    </g>
+                    {/* Tergite Shell Plate */}
+                    <rect
+                      x={segX}
+                      y="11"
+                      width="12"
+                      height="15"
+                      rx="3"
+                      fill={i % 2 === 0 ? '#FFE600' : '#F59E0B'}
+                      stroke="#0A0A0A"
+                      strokeWidth="2"
+                    />
+                    {/* Dorsal Medial Ridge Accent */}
+                    <line x1={segX + 2} y1="18.5" x2={segX + 10} y2="18.5" stroke="#0A0A0A" strokeWidth="1" opacity="0.35" />
+                  </g>
+                );
+              })}
 
-              {/* Antennae */}
-              <line x1="126" y1="12" x2="136" y2="5" stroke="#0A0A0A" strokeWidth="2" />
-              <line x1="126" y1="17" x2="136" y2="24" stroke="#0A0A0A" strokeWidth="2" />
+              {/* Cephalic Head Plate */}
+              <path
+                d="M 194,10 C 205,10 213,13 214,18.5 C 213,24 205,27 194,27 Z"
+                fill="#FF2E93"
+                stroke="#0A0A0A"
+                strokeWidth="2.5"
+              />
+              {/* Compound Eye spots */}
+              <circle cx="204" cy="14" r="2" fill="#0A0A0A" />
+              <circle cx="205" cy="13.5" r="0.8" fill="#FFFFFF" />
+              <circle cx="204" cy="23" r="2" fill="#0A0A0A" />
+              <circle cx="205" cy="22.5" r="0.8" fill="#FFFFFF" />
 
-              {/* Legs */}
-              {[30, 42, 54, 66, 78, 90, 102].map((x, i) => (
-                <g key={i}>
-                  <line x1={x} y1="8" x2={x - 5} y2="1" stroke="#0A0A0A" strokeWidth="2.5" />
-                  <line x1={x} y1="22" x2={x - 5} y2="29" stroke="#0A0A0A" strokeWidth="2.5" />
-                </g>
-              ))}
+              {/* Forcipules / Poison Claws */}
+              <path d="M 208,12 Q 215,14 213,17" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              <path d="M 208,25 Q 215,23 213,20" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+              {/* Twitching Sensory Antennae */}
+              <g style={{ transformOrigin: '212px 14px', animation: 'feelerTwitchTop 0.45s ease-in-out infinite' }}>
+                <path d="M 212,14 Q 224,9 237,3" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </g>
+              <g style={{ transformOrigin: '212px 23px', animation: 'feelerTwitchBottom 0.45s ease-in-out infinite' }}>
+                <path d="M 212,23 Q 224,28 237,34" stroke="#0A0A0A" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </g>
             </svg>
           </div>
         </div>

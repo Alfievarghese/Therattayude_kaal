@@ -4,7 +4,7 @@ import CentipedeSpinner from './CentipedeSpinner';
 
 const STEPS = [
   'Specimen received. Assigning case number...',
-  'Deploying YOLOv8 neural pathways...',
+  'Deploying YOLOv8s neural pathways...',
   'Counting legs in progress... please hold',
   'OFFICIAL COUNT CONFIRMED BY COMMITTEE',
 ];
@@ -129,7 +129,7 @@ export default function AnalysisSection({ result, isAnalyzing }) {
           <div className="border-4 border-[#0A0A0A] bg-[#0A0A0A] p-2 relative shadow-brutal">
             {/* Viewfinder HUD Overlays */}
             <div className="absolute top-4 left-4 z-30 font-mono text-[10px] text-[#FFE600] bg-black/80 border border-[#FFE600] px-2 py-0.5 font-bold">
-              {showAnnotated ? 'FEED: ANNOTATED_YOLO_V8' : 'FEED: OPTICAL_SENSOR'}
+              {showAnnotated ? 'FEED: ANNOTATED_YOLO_V8S' : 'FEED: OPTICAL_SENSOR'}
             </div>
             <div className="absolute top-4 right-4 z-30 font-mono text-[10px] text-[#00E676] bg-black/80 border border-[#00E676] px-2 py-0.5 font-bold">
               {showResult ? '● LOCKED' : '● SCANNING'}

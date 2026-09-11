@@ -190,12 +190,50 @@ body {
 
 /* Crawling Centipede Animation */
 @keyframes crawlTrack {
-  0% { transform: translateX(-160px); }
-  100% { transform: translateX(calc(100vw + 160px)); }
+  0% { transform: translateX(-240px); }
+  100% { transform: translateX(calc(100vw + 240px)); }
 }
 
 .animate-crawl {
-  animation: crawlTrack 20s linear infinite;
+  animation: crawlTrack 18s linear infinite;
+  will-change: transform;
+}
+
+.animate-crawl:hover {
+  animation-duration: 6.5s;
+}
+
+/* Authentic Arthropod Metachronal Leg Walking Rhythm */
+@keyframes legPaddleTop {
+  0%, 100% { transform: rotate(-24deg); }
+  50% { transform: rotate(26deg); }
+}
+
+@keyframes legPaddleBottom {
+  0%, 100% { transform: rotate(26deg); }
+  50% { transform: rotate(-24deg); }
+}
+
+@keyframes feelerTwitchTop {
+  0%, 100% { transform: rotate(0deg); }
+  33% { transform: rotate(-14deg); }
+  66% { transform: rotate(8deg); }
+}
+
+@keyframes feelerTwitchBottom {
+  0%, 100% { transform: rotate(0deg); }
+  33% { transform: rotate(14deg); }
+  66% { transform: rotate(-8deg); }
+}
+
+@keyframes bodySinuousWave {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-1deg); }
+  75% { transform: translateY(3px) rotate(1deg); }
+}
+
+.centipede-body-wave {
+  animation: bodySinuousWave 0.8s ease-in-out infinite;
 }
 
 /* Scan line */
