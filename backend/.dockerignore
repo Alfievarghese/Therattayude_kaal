@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+data/
+uploads/
+annotated/
+*.db
+test_*.png
+test_*.jpg
+.env
+.venv
+env/
+venv/
