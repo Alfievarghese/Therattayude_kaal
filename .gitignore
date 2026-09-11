@@ -1,0 +1,70 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.cache
+
+# Node / Frontend build outputs & dependencies
+node_modules/
+dist/
+frontend/dist/
+
+# Environment configs (never commit secrets or local configs)
+.env
+.env.local
+.env.*.local
+.venv/
+env/
+venv/
+
+# Large training datasets, weights & runs
+dataset/
+yolo_dataset/
+labelled legs/
+labelled\ legs/
+runs/
+weights/
+
+# Ignore base models, but PRESERVE the trained custom weights for deployment
+*.pt
+!backend/best.pt
+
+# Databases and runtime data
+*.db
+*.sqlite
+*.sqlite3
+data/
+backend/data/
+therattayude_kaal.db
+backend/therattayude_kaal.db
+centipede.db
+backend/centipede.db
+database.db
+backend/database.db
+
+# Dynamic upload directories and generated artifacts
+uploads/
+backend/uploads/
+annotated/
+backend/annotated/
+
+# Temporary test / debug images and videos
+test_*.png
+test_*.jpg
+test_*.jpeg
+backend/test_*.png
+backend/test_*.jpg
+*.mp4
+*.avi
+*.webm
+
+# Internal workspace / agent skills / IDE files
+SKILLS/
+.agents/
+.idea/
+.vscode/
+COMMITS_LOG.md
+
+# OS files
+.DS_Store
+Thumbs.db
