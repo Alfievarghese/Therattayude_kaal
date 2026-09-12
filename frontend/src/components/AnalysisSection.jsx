@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Activity } from 'lucide-react';
+import { Camera, AlertOctagon } from 'lucide-react';
 import CentipedeSpinner from './CentipedeSpinner';
 
 const STEPS = [

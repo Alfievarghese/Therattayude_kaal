@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Download, Printer, Award, ZoomIn } from 'lucide-react';
+import { Download, Printer, ZoomIn, ZoomOut, UserCheck } from 'lucide-react';
 import CentipedeSpinner from './CentipedeSpinner';
 
 const API_BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/+$/, '') : '';

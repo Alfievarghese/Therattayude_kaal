@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Microscope, Trash2, FlaskConical } from 'lucide-react';
+import { Microscope, Trash2, FlaskConical, UploadCloud, AlertTriangle } from 'lucide-react';
 
 export default function UploadSection({ onUpload, isAnalyzing }) {
   const [dragOver, setDragOver] = useState(false);

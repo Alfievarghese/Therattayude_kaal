@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Award, Microscope } from 'lucide-react';
 
 export default function HeroSection() {
   return (
