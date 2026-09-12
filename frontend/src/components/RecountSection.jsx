@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RotateCcw, Scale, RefreshCw } from 'lucide-react';
+import { RotateCcw, Scale } from 'lucide-react';
 import CentipedeSpinner from './CentipedeSpinner';
 
 const API_BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/+$/, '') : '';

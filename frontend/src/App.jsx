@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Zap, RefreshCw, Terminal } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import HeroSection from './components/HeroSection';
 import UploadSection from './components/UploadSection';
 import AnalysisSection from './components/AnalysisSection';
@@ -7,7 +7,6 @@ import RecountSection from './components/RecountSection';
 import CertificateSection from './components/CertificateSection';
 import Leaderboard from './components/Leaderboard';
 import Preloader from './components/Preloader';
-import TopCornerCentipede from './components/TopCornerCentipede';
 
 const API_BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/+$/, '') : '';
 
@@ -123,33 +122,56 @@ export default function App() {
       )}
 
       {/* Top Floating Control Bar */}
-      <div className="sticky top-0 z-40 bg-[#0A0A0A] text-white border-b-3 border-[#0A0A0A] px-3 sm:px-4 py-1.5 flex items-center justify-between text-xs font-mono">
+      <header className="sticky top-0 z-40 bg-[#0A0A0A] text-white border-b-3 border-[#0A0A0A] px-3 sm:px-6 py-2 flex items-center justify-between text-xs font-mono select-none">
         <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Endless Centipede Running Loop in Top-Left Corner */}
-          <TopCornerCentipede />
+          {/* Department Designation Badge */}
+          <div className="flex items-center">
+            <span className="bg-[#FFE600] text-black font-archivo text-[11px] font-black px-2.5 py-0.5 border-2 border-black shadow-[2px_2px_0px_0px_#FFFFFF] tracking-wider uppercase">
+              KPT-SYS // V3.0
+            </span>
+          </div>
 
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
-            <span className="text-[#FFE600] font-black uppercase tracking-wider hidden md:inline">
+          {/* Live Scanner Telemetry State */}
+          <div className="flex items-center gap-2 pl-1 border-l-2 border-neutral-800">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E676] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00E676]" />
+            </span>
+            <span className="text-[#FFE600] font-bold tracking-wider text-[11px] sm:text-xs">
               KERALA PODIATRIC TELEMETRY
             </span>
-            <span className="text-gray-400 text-[11px] hidden sm:inline">
-              [ YOLOv8s ARTHROPOD TELEMETRY ONLINE ]
+            <span className="hidden md:inline text-neutral-400 text-[10px] tracking-wide">
+              [ YOLOv8s // 150-EPOCH ARTHROPOD CORE ]
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+
+        {/* Quick Jumps & Controls */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="hidden lg:flex items-center gap-4 text-[11px] text-neutral-400">
+            <a href="#upload-section" className="hover:text-[#FFE600] transition-colors font-bold">
+              [ INTAKE ]
+            </a>
+            <a href="#leaderboard-section" className="hover:text-[#FFE600] transition-colors font-bold">
+              [ REGISTRY ]
+            </a>
+            <span className="text-neutral-600">|</span>
+            <span className="text-[#FF3333] font-bold">
+              CLASSIFICATION: 100% POINTLESS
+            </span>
+          </div>
+
           <button
             type="button"
             onClick={() => setShowPreloader(true)}
-            className="text-[11px] bg-[#FFE600] text-black font-black px-2.5 py-1 border border-black shadow-[2px_2px_0px_0px_#FFF] hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer uppercase transition-all inline-flex items-center gap-1.5"
-            title="Re-run the retro laboratory boot sequence"
+            className="text-[11px] bg-[#FFE600] text-black font-archivo font-black px-3 py-1 border-2 border-black shadow-[2px_2px_0px_0px_#FFFFFF] hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer uppercase transition-all inline-flex items-center gap-1.5 active:translate-x-[2px] active:translate-y-[2px]"
+            title="Re-run the laboratory boot diagnostics sequence"
           >
-            <Zap className="w-3 h-3 text-black fill-black" />
-            REBOOT SYSTEM
+            <Zap className="w-3.5 h-3.5 text-black fill-black" />
+            <span>REBOOT SYSTEM</span>
           </button>
         </div>
-      </div>
+      </header>
 
       <div>
         {/* Hero Section with Easter Egg wrapper */}

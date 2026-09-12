@@ -1,8 +1,8 @@
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
-# Therattayude Kaal (തേരട്ടയുടെ കാൽ) 🎯
+# Therattayude Kaal (തേരട്ടയുടെ കാൽ)
 
-### *The World's Most Pointless Computer Vision Podiatric Instrument*
+### The World's Most Pointless Centipede Leg Counter
 
 ---
 
@@ -15,18 +15,20 @@
 - Member 2: S Tippu Sahib - St. Joseph's College of Engineering and Technology, Palai
 
 ### Project Description
-An over-engineered industrial podiatric telemetry platform trained on custom YOLOv8s deep vision to isolate, track, and count every single individual leg on centipede specimens (പഴുതാര). Because counting centipede legs is the single most useless and unnecessary task conceivable in Kerala folklore, we built an AI-driven scientific instrument to do exactly that with 46.2% mAP50 precision.
+In Malayalam, when someone wastes time doing something completely pointless, people say *"തേരട്ടയുടെ കാൽ എണ്ണുവാണോ?"* (Are you counting a centipede's legs?). We took that literally. 
+
+This is a web app powered by a custom YOLOv8s model trained on over 5,000 hand-annotated centipede legs. You upload a photo of a centipede (പഴുതാര), the model spots and counts every visible leg, prints an official diploma of useless achievement, and logs your count to a global leaderboard.
 
 ### The Problem (that doesn't exist)
-In everyday Kerala culture, *"തേരട്ടയുടെ കാൽ എണ്ണൽ"* (counting a centipede's legs) is an age-old Malayalam proverb denoting the absolute pinnacle of futile, time-wasting, and pointless human endeavors. Nobody in the history of biological science has ever needed to know the exact leg count of an agitated centipede crawling across their veranda floorboards at 3:00 AM.
+Centipedes run around at night with somewhere between 15 and 40 visible legs. Nobody in Kerala, or anywhere else on Earth, has ever needed an exact inventory of how many legs were on the centipede under their bed. People just want it out of the room.
 
 ### The Solution (that nobody asked for)
-We built a declassified, government-grade computer vision apparatus that:
-- Ingests photographs of centipedes via a tactile neobrutalist telemetry cockpit.
-- Deploys a custom-trained YOLOv8s neural network (11.1M parameters, 150 epochs) featuring an optical radar reticle scanner to identify, isolate, and tally every outward-facing leg.
-- Convenes a democratic **Disputed Specimen Tribunal** allowing users to demand high-drama recounts across confidence thresholds (`0.10`, `0.15`, `0.20`) when they inevitably distrust the computer's verdict.
-- Generates an official, high-resolution, downloadable Royal Diploma of Useless Achievement signed by *Dr. Kaalu Vettichu* and *Prof. Mandi Masala*.
-- Archives all audited specimens into a global **Hall of Legs** leaderboard.
+Instead of grabbing a broom, you can now take a photo and run it through a full computer vision pipeline:
+- Upload any photo of a centipede.
+- A custom-trained YOLOv8s model detects every individual leg with bounding boxes and confidence scores.
+- If you disagree with the count, the Recount Tribunal runs the model three times at different thresholds (0.10, 0.15, 0.20) so you can argue with the algorithm.
+- Once you accept the number, the system prints a high-res Royal Diploma signed by *Dr. Kaalu Vettichu* and *Prof. Mandi Masala*.
+- The results go straight to the Hall of Legs leaderboard, which proudly tracks total legs counted and zero lives improved.
 
 ---
 
@@ -35,13 +37,13 @@ We built a declassified, government-grade computer vision apparatus that:
 ### Technologies/Components Used
 
 For Software:
-- **Languages used**: Python 3.11, JavaScript (ES2024 / JSX), HTML5, CSS3
-- **Frameworks used**: FastAPI (Backend API), React 19 + Vite (Frontend SPA), Tailwind CSS v4 (Industrial Design System)
-- **Libraries used**: Ultralytics YOLOv8s (Deep Learning Inference), Pillow / PIL (High-Resolution Diploma Generator), Lucide React (Tactical Iconography), SQLite (Telemetry Persistence), Web Audio API (Procedural Telemetry Fanfare & Reticle Clicks)
-- **Tools used**: Docker & Docker Compose, Vercel (Edge Client Hosting), Tailscale Funnel (Hybrid Edge-to-Backend Tunneling), Git & GitHub
+- Languages used: Python 3.11, JavaScript (ES2024 / React JSX), HTML5, CSS3
+- Frameworks used: FastAPI for the backend, React 19 + Vite for the frontend, Tailwind CSS for styling
+- Libraries used: Ultralytics YOLOv8s, Pillow / PIL for diploma generation, Lucide React for icons, SQLite for data persistence, Web Audio API for telemetry beeps
+- Tools used: Docker, Docker Compose, Vercel, Tailscale Funnel, Git
 
 For Hardware:
-- *None (Software / Deep Vision Pipeline)*
+- None. Built and trained locally on an NVIDIA RTX 4050 GPU.
 
 ---
 
@@ -51,26 +53,26 @@ For Software:
 
 # Installation
 
-1. **Clone the repository**:
+1. Clone the repository:
 ```bash
 git clone https://github.com/AlfieVarghese/USELESS_PROJECT_3.0.git
 cd USELESS_PROJECT_3.0
 ```
 
-2. **Backend Setup**:
+2. Set up the backend:
 ```bash
 cd backend
 python -m venv venv
 
-# On Windows:
+# Windows:
 venv\Scripts\activate
-# On Linux/macOS:
+# Linux/macOS:
 source venv/bin/activate
 
 pip install -r requirements.txt
 ```
 
-3. **Frontend Setup**:
+3. Set up the frontend:
 ```bash
 cd ../frontend
 npm install
@@ -78,28 +80,28 @@ npm install
 
 # Run
 
-### Option A: Local Development
+### Local development
 
-1. **Start the FastAPI Backend**:
+1. Start FastAPI:
 ```bash
-# In backend/ with active venv:
+# inside backend/ with venv active
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-2. **Start the Vite Frontend**:
+2. Start the Vite dev server:
 ```bash
-# In frontend/:
+# inside frontend/
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open http://localhost:5173 in your browser.
 
-### Option B: Docker Compose (Production / VPS)
+### Docker Compose (production)
 
-Run the entire full-stack stack with a single command:
+Run the full stack with one command:
 ```bash
 docker compose up -d --build
 ```
-Access the application on [http://localhost](http://localhost) (Port 80).
+Open http://localhost on port 80.
 
 ---
 
@@ -109,66 +111,67 @@ For Software:
 
 # Screenshots
 
-### 1. Neobrutalist Telemetry Command Center
+### 1. Telemetry dashboard
 ![Command Center](screenshots/hero_section.png)
-*High-contrast declassified interface with live warning ticker, official stamp badges, interactive audio seal, and realistic crawling Kerala Scolopendra.*
+*Tactical neobrutalist header with real-time ticker and animated centipede crawler.*
 
 ---
 
-### 2. Biometric Optical Radar Audit & Leg Tally
+### 2. Neural leg detection
 ![Optical Radar Audit](screenshots/optical_radar_audit.png)
-*Automated podiatric audit executing YOLOv8s inference with real-time rotating radar reticle, leg isolation detection pings, and high-voltage tally readout.*
+*YOLOv8s isolating and tallying individual centipede legs with bounding boxes.*
 
 ---
 
-### 3. Disputed Specimen Tribunal (Recount Consensus)
+### 3. Recount tribunal
 ![Disputed Specimen Tribunal](screenshots/recount_tribunal.png)
-*Committee recount engine re-running the neural model across multiple confidence thresholds to establish democratic majority consensus.*
+*Multi-threshold recount view when you do not trust the initial count.*
 
 ---
 
-### 4. Official Royal Diploma of Useless Achievement
+### 4. Official diploma of useless achievement
 ![Royal Certificate](screenshots/certificate.png)
-*Official high-resolution diplomatic parchment certifying completed podiatric audit, complete with gold embossed seals and official signatures.*
+*High-resolution printable diploma complete with gold seal and official signatures.*
 
 ---
 
-### 5. Global Hall of Legs (Leaderboard)
+### 5. Global hall of legs
 ![Leaderboard](screenshots/leaderboard.png)
-*Public audit archive logging total appendages cataloged, record-holding specimens, and 0 lives improved.*
+*Leaderboard tracking top podiatric counts and zero lives improved.*
 
 ---
 
 # Diagrams
 
-### System Architecture & Workflow
+### Architecture
 
 ```
-                               ┌────────────────────────┐
-                               │     Browser Client     │
-                               │  (Vite + React 19)     │
-                               └───────────┬────────────┘
-                                           │
-                        HTTPS API Requests │ (Tailscale / Vercel Edge)
-                                           ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ FastAPI Backend Server (Python 3.11)                                   │
-│                                                                        │
-│   ┌────────────────────────────┐    ┌──────────────────────────────┐   │
-│   │ YOLOv8s Inference Engine   │    │ PIL Certificate Engine       │   │
-│   │ - 150 Epochs Calibrated    │    │ - Dynamic High-Res Diploma   │   │
-│   │ - 46.2% mAP50 Precision    │    │ - Authentic Royal Signatures │   │
-│   │ - Multi-Threshold Recounts │    │ - Gold Foil Embossed Seal    │   │
-│   └─────────────┬──────────────┘    └──────────────┬───────────────┘   │
-│                 │                                  │                   │
-│                 └─────────────────┬────────────────┘                   │
-│                                   ▼                                    │
-│                     ┌───────────────────────────┐                      │
-│                     │ SQLite Telemetry Database │                      │
-│                     │ - Audit Records & Counts  │                      │
-│                     │ - Global Leaderboard      │                      │
-│                     └───────────────────────────┘                      │
-└────────────────────────────────────────────────────────────────────────┘
+                    +------------------------+
+                    |     Browser Client     |
+                    |  (React 19 + Vite SPA) |
+                    +-----------+------------+
+                                |
+             REST API Calls     | (Vercel Edge / Tailscale Funnel)
+                                v
++---------------------------------------------------------------+
+| FastAPI Backend Server (Python 3.11)                          |
+|                                                               |
+|   +--------------------------+    +-----------------------+   |
+|   | YOLOv8s Inference Engine |    | PIL Diploma Generator |   |
+|   | - 150 epochs trained     |    | - Custom layout       |   |
+|   | - 46.2% mAP50            |    | - Signatures & seals  |   |
+|   | - Multi-threshold recount|    | - PNG stream output   |   |
+|   +-------------+------------+    +-----------+-----------+   |
+|                 |                             |               |
+|                 +--------------+--------------+               |
+|                                |                              |
+|                                v                              |
+|                  +--------------------------+                 |
+|                  | SQLite Database          |                 |
+|                  | - Submissions & counts   |                 |
+|                  | - Leaderboard registry   |                 |
+|                  +--------------------------+                 |
++---------------------------------------------------------------+
 ```
 
 ---
@@ -177,18 +180,18 @@ For Software:
 
 # Additional Demos
 
-- **Live Production Deployment**: [https://therattayudekaal.vercel.app/](https://therattayudekaal.vercel.app/)
+- Live website: [https://therattayudekaal.vercel.app/](https://therattayudekaal.vercel.app/)
 
 ---
 
 ## Team Contributions
 
-- **Alfie Varghese**: Fullstack development & cloud deployment (React 19 neobrutalist client, Vercel edge deployment, Docker containerization, and Tailscale backend funneling).
-- **S Tippu Sahib**: Computer vision modeling, dataset labeling & evaluation (YOLOv8s model training, 150-epoch podiatric calibration, accuracy benchmarks, and data augmentation).
+- Alfie Varghese: Built the React 19 frontend, handled Vercel deployment, configured Docker services, and set up Tailscale funneling.
+- S Tippu Sahib: Curated the dataset, labeled over 5,000 centipede legs in AnyLabeling, and trained/evaluated the YOLOv8s model for 150 epochs.
 
 ---
 
-Made with ❤️ at TinkerHub Useless Projects 
+Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)

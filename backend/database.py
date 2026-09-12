@@ -68,7 +68,7 @@ def save_submission(
     return timestamp
 
 
-def get_submission(submission_id: str):
+def get_submission(submission_id: str) -> dict | None:
     """Get a single submission by ID."""
     conn = get_connection()
     row = conn.execute(
@@ -80,7 +80,7 @@ def get_submission(submission_id: str):
     return dict(row)
 
 
-def get_leaderboard(limit: int = 20):
+def get_leaderboard(limit: int = 20) -> list[dict]:
     """Get top submissions sorted by leg count descending."""
     conn = get_connection()
     rows = conn.execute(
@@ -91,17 +91,17 @@ def get_leaderboard(limit: int = 20):
     return [dict(r) for r in rows]
 
 
-def get_total_legs():
+def get_total_legs() -> int:
     """Get the sum of all legs ever counted."""
     conn = get_connection()
     result = conn.execute(
         "SELECT COALESCE(SUM(leg_count), 0) as total FROM submissions"
     ).fetchone()
     conn.close()
-    return result["total"]
+    return int(result["total"]) if result else 0
 
 
-def clear_leaderboard():
+def clear_leaderboard() -> None:
     """Clear all submissions and purge the archive."""
     conn = get_connection()
     conn.execute("DELETE FROM submissions")

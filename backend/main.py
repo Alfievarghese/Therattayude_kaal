@@ -79,7 +79,7 @@ def startup():
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _run_detection(image_path: str, conf: float = 0.15):
+def _run_detection(image_path: str, conf: float = 0.15) -> tuple[int, list[float], np.ndarray]:
     """Run YOLO inference on an image. Returns (count, confidences, annotated_bgr)."""
     results = model.predict(source=image_path, conf=conf, save=False, verbose=False)
     result = results[0]
