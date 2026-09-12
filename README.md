@@ -41,8 +41,8 @@ For Software:
 # Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/AlfieVarghese/USELESS_PROJECT_3.0.git
-cd USELESS_PROJECT_3.0
+git clone https://github.com/Alfievarghese/Therattayude_kaal.git
+cd Therattayude_kaal
 ```
 
 2. Set up the backend:
