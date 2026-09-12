@@ -11,6 +11,10 @@
       "destination": "https://fox.tailcc00e1.ts.net/leaderboard"
     },
     {
+      "source": "/clear-leaderboard",
+      "destination": "https://fox.tailcc00e1.ts.net/clear-leaderboard"
+    },
+    {
       "source": "/recount/:path*",
       "destination": "https://fox.tailcc00e1.ts.net/recount/:path*"
     },

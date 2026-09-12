@@ -20,7 +20,14 @@ from PIL import Image
 from ultralytics import YOLO
 
 from certificate import generate_certificate
-from database import get_leaderboard, get_submission, get_total_legs, init_db, save_submission
+from database import (
+    clear_leaderboard,
+    get_leaderboard,
+    get_submission,
+    get_total_legs,
+    init_db,
+    save_submission,
+)
 
 # ---------------------------------------------------------------------------
 # Config
@@ -179,6 +186,21 @@ def leaderboard():
     return {
         "entries": results,
         "total_legs": total_legs,
+        "lives_improved": 0,
+    }
+
+
+@app.post("/clear-leaderboard")
+@app.delete("/leaderboard")
+def clear_leaderboard_endpoint():
+    """
+    Clear all specimens from the archive.
+    """
+    clear_leaderboard()
+    return {
+        "status": "cleared",
+        "entries": [],
+        "total_legs": 0,
         "lives_improved": 0,
     }
 

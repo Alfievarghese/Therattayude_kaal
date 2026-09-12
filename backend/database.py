@@ -99,3 +99,14 @@ def get_total_legs():
     ).fetchone()
     conn.close()
     return result["total"]
+
+
+def clear_leaderboard():
+    """Clear all submissions and purge the archive."""
+    conn = get_connection()
+    conn.execute("DELETE FROM submissions")
+    conn.commit()
+    conn.execute("VACUUM")
+    conn.commit()
+    conn.close()
+
