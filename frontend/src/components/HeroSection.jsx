@@ -1,6 +1,68 @@
-import { AlertTriangle, Award, Microscope } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { AlertTriangle, Award, Microscope, Zap } from 'lucide-react';
+
+const REACTION_MESSAGES = [
+  "DON'T POKE MY LEGS! 😡",
+  "HEY! SOCIAL DISTANCING! 🛑",
+  "EMERGENCY SCURRY: +400% SPEED ⚡",
+  "OUCH! THAT'S LEG #17! 🦵",
+  "പഴുതാര ANGERED (+100 AGILITY) 💨",
+  "SCIENTIFIC INTEGRITY COMPROMISED! 🧪",
+  "ZOOMIES ENGAGED! 🏎️💨",
+  "MALAYALAM PROVERB VIOLATION! 🚨",
+  "TACTILE HARASSMENT DETECTED! ⚠️",
+  "RECOUNT REJECTED BY SPECIMEN! 😤",
+];
 
 export default function HeroSection() {
+  const [isTapped, setIsTapped] = useState(false);
+  const [tapCount, setTapCount] = useState(0);
+  const [bubbleText, setBubbleText] = useState('');
+  const [bubbleKey, setBubbleKey] = useState(0);
+  const tapTimeoutRef = useRef(null);
+
+  const playScurrySound = () => {
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      const now = ctx.currentTime;
+      for (let i = 0; i < 4; i++) {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        const startF = 550 + i * 220;
+        osc.frequency.setValueAtTime(startF, now + i * 0.04);
+        osc.frequency.exponentialRampToValueAtTime(startF + 420, now + i * 0.04 + 0.035);
+        gain.gain.setValueAtTime(0.08, now + i * 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.04 + 0.038);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now + i * 0.04);
+        osc.stop(now + i * 0.04 + 0.045);
+      }
+    } catch {
+      // Audio autoplay policy fallback
+    }
+  };
+
+  const handleCentipedeTap = (e) => {
+    e.stopPropagation();
+    const nextCount = tapCount + 1;
+    setTapCount(nextCount);
+    setIsTapped(true);
+
+    const msg = REACTION_MESSAGES[(nextCount - 1) % REACTION_MESSAGES.length];
+    setBubbleText(msg);
+    setBubbleKey((prev) => prev + 1);
+
+    playScurrySound();
+
+    if (tapTimeoutRef.current) clearTimeout(tapTimeoutRef.current);
+    tapTimeoutRef.current = setTimeout(() => {
+      setIsTapped(false);
+    }, 2200);
+  };
   return (
     <section className="relative w-full border-b-4 border-[#0A0A0A] bg-[#F5F3EB] overflow-hidden">
       {/* Top Warning Hazard Stripe Marquee (Enlarged & Slowed for Crystal-Clear Readability) */}
@@ -115,11 +177,75 @@ export default function HeroSection() {
       </div>
 
       {/* Industrial Metric Ruler & Realistic Scolopendra Centipede Track */}
-      <div className="w-full bg-[#FAF8F5] border-t-3 border-[#0A0A0A] pt-4 pb-2 relative overflow-hidden select-none">
-        {/* Animated Centipede on track (Hover bug completely eliminated) */}
-        <div className="w-full h-12 relative mb-1" title="Kerala Specimen (പഴുതാര) // Calibrated Metric Telemetry Track">
-          <div className="animate-crawl absolute top-0 flex items-center pointer-events-none">
-            <svg width="280" height="48" viewBox="0 0 280 48" className="centipede-body-wave overflow-visible">
+      <div className="w-full bg-[#FAF8F5] border-t-3 border-[#0A0A0A] pt-3 pb-2 relative overflow-hidden select-none">
+        {/* Track Header & Interactive Agitate Prompt */}
+        <div className="w-full flex items-center justify-between px-4 pb-1 text-[10px] font-mono">
+          <div className="flex items-center gap-2 text-gray-700 font-bold">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
+            <span className="hidden sm:inline">CALIBRATED SCOLOPENDRA TELEMETRY TRACK (0 - 100 CM)</span>
+            <span className="sm:hidden">METRIC TRACK (0 - 100 CM)</span>
+          </div>
+          <button
+            type="button"
+            onClick={handleCentipedeTap}
+            className={`px-2.5 py-0.5 border-2 border-black font-bold uppercase transition-all cursor-pointer inline-flex items-center gap-1.5 shadow-brutal-xs ${
+              isTapped
+                ? 'bg-[#FF3333] text-white animate-bounce'
+                : 'bg-[#FFE600] text-black hover:bg-yellow-300 active:scale-95'
+            }`}
+            title="Click to agitate the centipede!"
+          >
+            {isTapped ? (
+              <>
+                <Zap className="w-3 h-3 fill-white" />
+                <span>SPECIMEN AGITATED // SCURRY: 400% // POKES: {tapCount}</span>
+              </>
+            ) : (
+              <>
+                <span>👉 POKE CENTIPEDE TO STIMULATE</span>
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Animated Centipede on track */}
+        <div className="w-full h-14 relative mb-1" title="Click or tap the centipede to stimulate legs!">
+          <div
+            onClick={handleCentipedeTap}
+            className={`animate-crawl absolute top-1 flex items-center cursor-pointer select-none transition-all ${
+              isTapped ? 'scurry-boost' : ''
+            }`}
+            style={{
+              animationDuration: isTapped ? '6.5s' : '22s',
+            }}
+          >
+            {/* Pop-up Comic Reaction Bubble */}
+            {isTapped && bubbleText && (
+              <div
+                key={bubbleKey}
+                className="centipede-bubble absolute -top-8 left-[130px] sm:left-[160px] z-20 pointer-events-none whitespace-nowrap bg-[#0A0A0A] text-[#FFE600] border-2 border-[#FFE600] px-2.5 py-0.5 font-mono text-[10px] sm:text-[11px] font-black uppercase shadow-[3px_3px_0px_#0A0A0A] flex items-center gap-1"
+              >
+                <span>{bubbleText}</span>
+                {/* Speech Bubble Pointer */}
+                <span className="absolute -bottom-1 left-6 w-2 h-2 bg-[#0A0A0A] rotate-45 border-r-2 border-b-2 border-[#FFE600]" />
+              </div>
+            )}
+
+            {/* Scurry Dust Puffs / Speed Lines */}
+            {isTapped && (
+              <div className="absolute -left-7 top-4 pointer-events-none flex items-center gap-1">
+                <span className="dust-particle text-sm">💨</span>
+                <span className="dust-particle text-xs" style={{ animationDelay: '0.12s' }}>💨</span>
+                <span className="text-xs animate-ping font-mono font-black text-[#D97706]">⚡</span>
+              </div>
+            )}
+
+            <svg
+              width="280"
+              height="48"
+              viewBox="0 0 280 48"
+              className={`${isTapped ? 'centipede-startled' : 'centipede-body-wave'} overflow-visible hover:scale-105 transition-transform`}
+            >
               <defs>
                 {/* Authentic Arthropod Amber-to-Mahogany Chitin Gradients */}
                 <linearGradient id="tergiteGradA" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -162,7 +288,7 @@ export default function HeroSection() {
               {Array.from({ length: 18 }).map((_, i) => {
                 const segX = 22 + i * 11.2;
                 const legX = segX + 5.6;
-                const delay = (17 - i) * 0.038;
+                const delay = (17 - i) * (isTapped ? 0.012 : 0.038);
                 const isEven = i % 2 === 0;
 
                 return (
@@ -171,7 +297,7 @@ export default function HeroSection() {
                     <g
                       style={{
                         transformOrigin: `${legX}px 15px`,
-                        animation: 'legPaddleTop 0.28s ease-in-out infinite',
+                        animation: isTapped ? 'legHyperPaddleTop 0.07s ease-in-out infinite' : 'legPaddleTop 0.28s ease-in-out infinite',
                         animationDelay: `${delay}s`,
                       }}
                     >
@@ -192,7 +318,7 @@ export default function HeroSection() {
                     <g
                       style={{
                         transformOrigin: `${legX}px 33px`,
-                        animation: 'legPaddleBottom 0.28s ease-in-out infinite',
+                        animation: isTapped ? 'legHyperPaddleBottom 0.07s ease-in-out infinite' : 'legPaddleBottom 0.28s ease-in-out infinite',
                         animationDelay: `${delay}s`,
                       }}
                     >
@@ -279,7 +405,12 @@ export default function HeroSection() {
               <circle cx="253" cy="27" r="1.4" fill="#000000" />
 
               {/* Long Articulated Whip Antennae */}
-              <g style={{ transformOrigin: '246px 18px', animation: 'feelerTwitchTop 0.5s ease-in-out infinite' }}>
+              <g
+                style={{
+                  transformOrigin: '246px 18px',
+                  animation: isTapped ? 'feelerTwitchTop 0.18s ease-in-out infinite' : 'feelerTwitchTop 0.5s ease-in-out infinite',
+                }}
+              >
                 <path
                   d="M 246,18 Q 262,11 278,3"
                   stroke="#F59E0B"
@@ -288,7 +419,12 @@ export default function HeroSection() {
                   fill="none"
                 />
               </g>
-              <g style={{ transformOrigin: '246px 30px', animation: 'feelerTwitchBottom 0.5s ease-in-out infinite' }}>
+              <g
+                style={{
+                  transformOrigin: '246px 30px',
+                  animation: isTapped ? 'feelerTwitchBottom 0.18s ease-in-out infinite' : 'feelerTwitchBottom 0.5s ease-in-out infinite',
+                }}
+              >
                 <path
                   d="M 246,30 Q 262,37 278,45"
                   stroke="#F59E0B"
