@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Crown, Bug, Trash2 } from 'lucide-react';
+import { Crown, Bug } from 'lucide-react';
 import CentipedeSpinner from './CentipedeSpinner';
 
 const API_BASE = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/+$/, '') : '';
 
 // Cutoff timestamp to clear test submissions prior to official launch
-const RESET_CUTOFF = '2026-09-12T03:15:00.000Z';
+const RESET_CUTOFF = '2026-09-12T04:30:00.000Z';
 
 export default function Leaderboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [clearing, setClearing] = useState(false);
 
   const fetchLeaderboard = async () => {
     try {
@@ -41,26 +40,6 @@ export default function Leaderboard() {
     setLoading(false);
   };
 
-  const handleClearLeaderboard = async () => {
-    if (!window.confirm("ARE YOU SURE? This will purge all audited specimens from the archive.")) {
-      return;
-    }
-    setClearing(true);
-    const nowIso = new Date().toISOString();
-    localStorage.setItem('theratta_archive_purged_at', nowIso);
-    setData({
-      entries: [],
-      total_legs: 0,
-      lives_improved: 0,
-    });
-    try {
-      await fetch(`${API_BASE}/clear-leaderboard`, { method: 'POST' });
-    } catch (e) {
-      console.warn('Backend clear endpoint unreachable:', e);
-    }
-    setClearing(false);
-  };
-
   useEffect(() => {
     fetchLeaderboard();
   }, []);
@@ -85,18 +64,9 @@ export default function Leaderboard() {
             </h2>
           </div>
           <div className="flex items-center gap-3">
-            <div className="font-mono text-xs font-bold text-gray-700 hidden sm:block">
+            <div className="font-mono text-xs font-bold text-gray-700">
               METRIC: TOP PODIATRIC COUNTS
             </div>
-            <button
-              onClick={handleClearLeaderboard}
-              disabled={clearing}
-              title="Purge all specimens from archive"
-              className="brutal-btn px-2.5 py-1 text-[11px] font-mono font-bold bg-[#FF3333] text-white border-2 border-black hover:bg-black transition-colors shadow-brutal-xs flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
-            >
-              <Trash2 className="w-3.5 h-3.5" />
-              <span>{clearing ? 'PURGING...' : 'CLEAR ARCHIVE'}</span>
-            </button>
           </div>
         </div>
 

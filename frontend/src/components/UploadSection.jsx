@@ -10,16 +10,21 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
   const fileInputRef = useRef(null);
 
   const handleFile = (file) => {
-    if (!file || !file.type.startsWith('image/')) return;
+    if (!file) return;
+    if (file.type && typeof file.type === 'string' && !file.type.startsWith('image/')) return;
     setSelectedFile(file);
-    setPreview(URL.createObjectURL(file));
+    try {
+      setPreview(URL.createObjectURL(file));
+    } catch (e) {
+      console.warn('Could not create ObjectURL:', e);
+    }
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
     setDragOver(false);
-    const file = e.dataTransfer.files[0];
-    handleFile(file);
+    const file = e.dataTransfer?.files?.[0];
+    if (file) handleFile(file);
   };
 
   const handleDragOver = (e) => {
@@ -34,8 +39,8 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
   };
 
   const handleInputChange = (e) => {
-    const file = e.target.files[0];
-    handleFile(file);
+    const file = e.target?.files?.[0];
+    if (file) handleFile(file);
   };
 
   const handleLoadSample = async (samplePath, filename) => {
@@ -43,13 +48,15 @@ export default function UploadSection({ onUpload, isAnalyzing }) {
     setSampleLoading(true);
     try {
       const res = await fetch(samplePath);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const blob = await res.blob();
-      const file = new File([blob], filename, { type: 'image/jpeg' });
+      const file = new File([blob], filename, { type: blob.type || 'image/jpeg' });
       handleFile(file);
     } catch (err) {
       console.error('Failed to load sample:', err);
+    } finally {
+      setSampleLoading(false);
     }
-    setSampleLoading(false);
   };
 
   const handleStartAnalysis = () => {
