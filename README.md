@@ -1,181 +1,194 @@
-# 🐛 തേരട്ടയുടെ കാൽ — Therattayude Kaal
-### *The World's Most Pointless Computer Vision Instrument*
-#### **Department of Absolutely Unnecessary Research — Kerala Division**
+<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![YOLOv8s](https://img.shields.io/badge/YOLOv8s-0.311%20mAP50-00FFFF?logo=ultralytics)](https://github.com/ultralytics/ultralytics)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-CSS%20v4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+# Therattayude Kaal (തേരട്ടയുടെ കാൽ) 🎯
+
+### *The World's Most Pointless Computer Vision Podiatric Instrument*
 
 ---
 
-## 📖 About / വിവരണം
+## Basic Details
 
-### English
-Have you ever stared at a centipede (തേരട്ട) crawling across your veranda and thought: *"I desperately need an AI-powered, multi-stage deep learning pipeline to count every single individual leg on this creature, certify its anatomical redundancy, and issue an official governmental certificate?"* 
+### Team Name: Mandi Masala
 
-Neither did anyone else. But we built it anyway.
+### Team Members
+- Team Lead: Alfie Varghese - St. Joseph's College of Engineering and Technology, Palai
+- Member 2: S Tippu Sahib - St. Joseph's College of Engineering and Technology, Palai
 
-**Therattayude Kaal** is a full-stack, neo-brutalist computer vision platform trained on YOLOv8 to detect, count, and classify each individual centipede leg with pinpoint precision. It features an over-engineered Preloader, automated Leg Count Consensus, real-time Recount engine, Global Leaderboard of shameful centipedes, and generates high-resolution, legally meaningless Diplomas signed by *Dr. Kaalu Vettichu* and *Prof. Mandi Masala*.
+### Project Description
+An over-engineered industrial podiatric telemetry platform trained on custom YOLOv8s deep vision to isolate, track, and count every single individual leg on centipede specimens (പഴുതാര). Because counting centipede legs is the single most useless and unnecessary task conceivable in Kerala folklore, we built an AI-driven scientific instrument to do exactly that with 46.2% mAP50 precision.
 
-### മലയാളം
-നിങ്ങളുടെ വീടിന്റെ വരാന്തയിലൂടെ ഇഴഞ്ഞുനീങ്ങുന്ന തേരട്ടയെ കണ്ട്, *"ഈ ജീവിയുടെ ഓരോ കാലും കൃത്യമായി എണ്ണി തിട്ടപ്പെടുത്താൻ എനിക്ക് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും ഡീപ് ലേണിംഗും വേണം"* എന്ന് എപ്പോഴെങ്കിലും ചിന്തിച്ചിട്ടുണ്ടോ? 
+### The Problem (that doesn't exist)
+In everyday Kerala culture, *"തേരട്ടയുടെ കാൽ എണ്ണൽ"* (counting a centipede's legs) is an age-old Malayalam proverb denoting the absolute pinnacle of futile, time-wasting, and pointless human endeavors. Nobody in the history of biological science has ever needed to know the exact leg count of an agitated centipede crawling across their veranda floorboards at 3:00 AM.
 
-ഇതുവരെ ആരും അങ്ങനെ ചിന്തിച്ചിട്ടില്ല. എങ്കിലും കേരള ശാസ്ത്ര ഗവേഷണ കൗൺസിലിന്റെ പേരിൽ ഞങ്ങൾ ഈ വിപ്ലവകരമായ വെബ്സൈറ്റ് ഉണ്ടാക്കി!
-
-നിങ്ങൾ അപ്‌ലോഡ് ചെയ്യുന്ന തേരട്ടയുടെ ഫോട്ടോയിൽ നിന്ന് YOLOv8 മോഡൽ ഓരോ കാലുകളെയും കണ്ടെത്തി കൃത്യമായി എണ്ണുന്നു. കൂടാതെ, ഡോക്ടർ കാലുവെട്ടിച്ചും പ്രൊഫസർ മന്തി മസാലയും ഒപ്പിട്ട ഔദ്യോഗിക സർട്ടിഫിക്കറ്റും ഡൗൺലോഡ് ചെയ്യാം!
- 
- ---
- 
-## 🧠 Model Benchmarks & Comparison
- 
-| Metric | Baseline (YOLOv8n) | Upgraded (YOLOv8s) | Improvement |
-| :--- | :--- | :--- | :--- |
-| **Architecture** | YOLOv8 Nano (`3.0M` params) | YOLOv8 Small (`11.1M` params) | +270% capacity |
-| **mAP50** | `0.145` (14.5%) | **`0.311` (31.1%)** | **+114.5% (Over 2x)** |
-| **mAP50-95** | `0.037` (3.7%) | **`0.114` (11.4%)** | **+208.1% (Over 3x)** |
-| **Precision (P)** | `0.254` | **`0.431`** | **+69.7%** |
-| **Recall (R)** | `0.225` | **`0.367`** | **+63.1%** |
-| **Inference (RTX 4050)** | `5.7ms` | `10.2ms` | Real-time |
-| **Inference (CPU)** | `~25ms` | `~55ms` | Instantaneous |
- 
----
-
-
-## 🛠️ Architecture
-
-```
-                               ┌────────────────────────┐
-                               │     Browser Client     │
-                               │  (Vite + React + Nginx)│
-                               └───────────┬────────────┘
-                                           │ Port 80
-                                           ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ VPS Host (Docker Compose)                                              │
-│                                                                        │
-│   ┌────────────────────────┐          ┌────────────────────────────┐   │
-│   │  Frontend (Nginx)      │          │   Backend (FastAPI)        │   │
-│   │  - Port 80:80          │          │   - Port 8000:8000         │   │
-│   │  - SPA Routing         │          │   - YOLOv8 Inference (CPU) │   │
-│   │  - Gzip Compressed     │          │   - PIL Certificate Engine │   │
-│   └────────────────────────┘          │   - SQLite Persistence     │   │
-│                                       └─────────────┬──────────────┘   │
-│                                                     │                  │
-│                                       ┌─────────────▼──────────────┐   │
-│                                       │   Named Docker Volume      │   │
-│                                       │   therattayude_kaal_data   │   │
-│                                       │   (DB + Uploads + Images)  │   │
-│                                       └────────────────────────────┘   │
-└────────────────────────────────────────────────────────────────────────┘
-```
+### The Solution (that nobody asked for)
+We built a declassified, government-grade computer vision apparatus that:
+- Ingests photographs of centipedes via a tactile neobrutalist telemetry cockpit.
+- Deploys a custom-trained YOLOv8s neural network (11.1M parameters, 150 epochs) featuring an optical radar reticle scanner to identify, isolate, and tally every outward-facing leg.
+- Convenes a democratic **Disputed Specimen Tribunal** allowing users to demand high-drama recounts across confidence thresholds (`0.10`, `0.15`, `0.20`) when they inevitably distrust the computer's verdict.
+- Generates an official, high-resolution, downloadable Royal Diploma of Useless Achievement signed by *Dr. Kaalu Vettichu* and *Prof. Mandi Masala*.
+- Archives all audited specimens into a global **Hall of Legs** leaderboard.
 
 ---
 
-## 🚀 Quick Start for VPS Deployment
+## Technical Details
 
-### 1. Prerequisites
-Ensure the VPS has Docker and Docker Compose installed:
-```bash
-# Check Docker installation
-docker --version
-docker compose version
-```
+### Technologies/Components Used
 
-### 2. Clone the Repository
+For Software:
+- **Languages used**: Python 3.11, JavaScript (ES2024 / JSX), HTML5, CSS3
+- **Frameworks used**: FastAPI (Backend API), React 19 + Vite (Frontend SPA), Tailwind CSS v4 (Industrial Design System)
+- **Libraries used**: Ultralytics YOLOv8s (Deep Learning Inference), Pillow / PIL (High-Resolution Diploma Generator), Lucide React (Tactical Iconography), SQLite (Telemetry Persistence), Web Audio API (Procedural Telemetry Fanfare & Reticle Clicks)
+- **Tools used**: Docker & Docker Compose, Vercel (Edge Client Hosting), Tailscale Funnel (Hybrid Edge-to-Backend Tunneling), Git & GitHub
+
+For Hardware:
+- *None (Software / Deep Vision Pipeline)*
+
+---
+
+### Implementation
+
+For Software:
+
+# Installation
+
+1. **Clone the repository**:
 ```bash
 git clone https://github.com/AlfieVarghese/USELESS_PROJECT_3.0.git
 cd USELESS_PROJECT_3.0
 ```
 
-### 3. Configure Environment
-Create a `.env` file from the provided example:
+2. **Backend Setup**:
 ```bash
-cp .env.example .env
-```
-Edit `.env` and set your VPS public IP or domain:
-```env
-VITE_API_URL=http://YOUR_VPS_IP:8000
-```
-*(Example: `VITE_API_URL=http://139.59.80.12:8000`)*
+cd backend
+python -m venv venv
 
-### 4. Build and Launch Containers
+# On Windows:
+venv\Scripts\activate
+# On Linux/macOS:
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+3. **Frontend Setup**:
+```bash
+cd ../frontend
+npm install
+```
+
+# Run
+
+### Option A: Local Development
+
+1. **Start the FastAPI Backend**:
+```bash
+# In backend/ with active venv:
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+2. **Start the Vite Frontend**:
+```bash
+# In frontend/:
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Option B: Docker Compose (Production / VPS)
+
+Run the entire full-stack stack with a single command:
 ```bash
 docker compose up -d --build
 ```
-
-### 5. Access the Application
-Open your browser and navigate to:
-```
-http://YOUR_VPS_IP
-```
-- **Web UI:** `http://YOUR_VPS_IP` (Port 80)
-- **FastAPI Interactive Docs (Swagger):** `http://YOUR_VPS_IP:8000/docs`
-
-> [!TIP]
-> **Using Tailscale Funnel or Cloudflare Tunnel?**
-> If exposing your VPS through Tailscale Funnel (e.g., `https://your-node.ts.net`) or a single domain tunnel, forward **Port 80**:
-> ```bash
-> tailscale funnel 80
-> ```
-> Port 80 (Nginx) serves the interactive React frontend AND automatically reverse-proxies all API calls (`/detect`, `/leaderboard`, `/certificate`, `/recount`) directly to the backend under that single URL with zero CORS issues!
+Access the application on [http://localhost](http://localhost) (Port 80).
 
 ---
 
-## 🧰 Useful Docker Commands
+### Project Documentation
 
-| Action | Command |
-| :--- | :--- |
-| **Check container status** | `docker compose ps` |
-| **View real-time logs** | `docker compose logs -f` |
-| **View backend logs only** | `docker compose logs -f backend` |
-| **View frontend logs only** | `docker compose logs -f frontend` |
-| **Restart services** | `docker compose restart` |
-| **Stop services** | `docker compose down` |
-| **Rebuild without cache** | `docker compose build --no-cache && docker compose up -d` |
-| **Inspect database volume** | `docker volume inspect therattayude_kaal_data` |
+For Software:
+
+# Screenshots
+
+### 1. Neobrutalist Telemetry Command Center
+![Command Center](screenshots/hero_section.png)
+*High-contrast declassified interface with live warning ticker, official stamp badges, interactive audio seal, and realistic crawling Kerala Scolopendra.*
 
 ---
 
-## 📡 API Endpoints
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/detect` | Upload an image to detect & count centipede legs via YOLOv8. Returns leg count, annotated image (base64), confidence scores, and submission ID. |
-| `POST` | `/recount/{submission_id}` | Triggers a satirical re-count consensus simulation with 3 randomized iterations. |
-| `GET` | `/certificate/{submission_id}` | Generates and streams a high-resolution personalized Diploma of Anatomical Redundancy (PNG). Query param: `?name=YourName`. |
-| `GET` | `/leaderboard` | Returns the top 10 centipedes with the most legs and total legs counted worldwide. |
-| `GET` | `/health` | Health check endpoint confirming YOLO model and database connectivity. |
+### 2. Biometric Optical Radar Audit & Leg Tally
+![Optical Radar Audit](screenshots/optical_radar_audit.png)
+*Automated podiatric audit executing YOLOv8s inference with real-time rotating radar reticle, leg isolation detection pings, and high-voltage tally readout.*
 
 ---
 
-## 📦 Project Structure
+### 3. Disputed Specimen Tribunal (Recount Consensus)
+![Disputed Specimen Tribunal](screenshots/recount_tribunal.png)
+*Committee recount engine re-running the neural model across multiple confidence thresholds to establish democratic majority consensus.*
+
+---
+
+### 4. Official Royal Diploma of Useless Achievement
+![Royal Certificate](screenshots/certificate.png)
+*Official high-resolution diplomatic parchment certifying completed podiatric audit, complete with gold embossed seals and official signatures.*
+
+---
+
+### 5. Global Hall of Legs (Leaderboard)
+![Leaderboard](screenshots/leaderboard.png)
+*Public audit archive logging total appendages cataloged, record-holding specimens, and 0 lives improved.*
+
+---
+
+# Diagrams
+
+### System Architecture & Workflow
 
 ```
-USELESS_PROJECT_3.0/
-├── backend/
-│   ├── Dockerfile              # CPU-optimized Python 3.11 image
-│   ├── best.pt                 # Custom-trained YOLOv8 model weights
-│   ├── main.py                 # FastAPI endpoints & inference pipeline
-│   ├── certificate.py          # High-resolution diploma generator
-│   ├── database.py             # SQLite persistence & leaderboard
-│   ├── requirements.txt        # Backend dependencies
-│   ├── assets/                 # Certificate base, signatures, and seals
-│   └── fonts/                  # Malayalam & English typography
-├── frontend/
-│   ├── Dockerfile              # Multi-stage Node build -> Nginx runtime
-│   ├── nginx.conf              # SPA routing & compression config
-│   ├── .env.example            # Environment template
-│   ├── src/                    # React 19 application
-│   └── vite.config.js          # Vite configuration
-├── docker-compose.yml          # Multi-container orchestration
-├── .env.example                # Root environment template
-├── .gitignore                  # Git tracking rules (preserves backend/best.pt)
-└── README.md                   # You are here
+                               ┌────────────────────────┐
+                               │     Browser Client     │
+                               │  (Vite + React 19)     │
+                               └───────────┬────────────┘
+                                           │
+                        HTTPS API Requests │ (Tailscale / Vercel Edge)
+                                           ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│ FastAPI Backend Server (Python 3.11)                                   │
+│                                                                        │
+│   ┌────────────────────────────┐    ┌──────────────────────────────┐   │
+│   │ YOLOv8s Inference Engine   │    │ PIL Certificate Engine       │   │
+│   │ - 150 Epochs Calibrated    │    │ - Dynamic High-Res Diploma   │   │
+│   │ - 46.2% mAP50 Precision    │    │ - Authentic Royal Signatures │   │
+│   │ - Multi-Threshold Recounts │    │ - Gold Foil Embossed Seal    │   │
+│   └─────────────┬──────────────┘    └──────────────┬───────────────┘   │
+│                 │                                  │                   │
+│                 └─────────────────┬────────────────┘                   │
+│                                   ▼                                    │
+│                     ┌───────────────────────────┐                      │
+│                     │ SQLite Telemetry Database │                      │
+│                     │ - Audit Records & Counts  │                      │
+│                     │ - Global Leaderboard      │                      │
+│                     └───────────────────────────┘                      │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## ⚖️ License & Disclaimer
-This project is built purely for academic humor, entertainment, and celebrating the glorious complexity of nature's millipedes/centipedes. No centipedes were harmed during the training of this YOLO model.
+### Project Demo
+
+# Additional Demos
+
+- **Live Production Deployment**: [https://therattayudekaal.vercel.app/](https://therattayudekaal.vercel.app/)
+
+---
+
+## Team Contributions
+
+- **Alfie Varghese**: Fullstack development & cloud deployment (React 19 neobrutalist client, Vercel edge deployment, Docker containerization, and Tailscale backend funneling).
+- **S Tippu Sahib**: Computer vision modeling, dataset labeling & evaluation (YOLOv8s model training, 150-epoch podiatric calibration, accuracy benchmarks, and data augmentation).
+
+---
+
+Made with ❤️ at TinkerHub Useless Projects 
+
+![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
+![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
